@@ -1,0 +1,8 @@
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\WinFormsApp1.exe
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\WinFormsApp1.dll
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\WinFormsApp1.deps.json
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\WinFormsApp1.runtimeconfig.json
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\WinFormsApp1.pdb
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\DocumentFormat.OpenXml.dll
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\Newtonsoft.Json.dll
+C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\TemplateEngine.Docx.dll

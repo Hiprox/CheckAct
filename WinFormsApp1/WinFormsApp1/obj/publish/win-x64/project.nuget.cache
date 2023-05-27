@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UeHyyp77n055kV6PoP32u6oO7W3UNf9cxIgEPA2KIU2AKBSWgsc4izwpeRQcfG5Hcd4naZKDlIud4Uqa6k3tdw==",
+  "dgSpecHash": "mR9MauJspq9ivcUaxwWU/hvicJrWF73LvWgiLazlakgA1Cm4UPCBZ49Rvux0V+n+I2dBy1sM2S79LAD0StRBuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anapc\\source\\repos\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\anapc\\Documents\\GitHub\\CheckAct\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anapc\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
     "C:\\Users\\anapc\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
@@ -121,10 +121,10 @@
     "C:\\Users\\anapc\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\anapc\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\anapc\\.nuget\\packages\\templateengine.docx\\1.1.5\\templateengine.docx.1.1.5.nupkg.sha512",
-    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.1\\microsoft.netcore.app.runtime.win-x64.7.0.1.nupkg.sha512",
-    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.1.nupkg.sha512",
-    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.1\\microsoft.aspnetcore.app.runtime.win-x64.7.0.1.nupkg.sha512",
-    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.1\\microsoft.netcore.app.crossgen2.win-x64.7.0.1.nupkg.sha512"
+    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.3\\microsoft.netcore.app.runtime.win-x64.7.0.3.nupkg.sha512",
+    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.3\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.3.nupkg.sha512",
+    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.3\\microsoft.aspnetcore.app.runtime.win-x64.7.0.3.nupkg.sha512",
+    "C:\\Users\\anapc\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.3\\microsoft.netcore.app.crossgen2.win-x64.7.0.3.nupkg.sha512"
   ],
   "logs": []
 }
