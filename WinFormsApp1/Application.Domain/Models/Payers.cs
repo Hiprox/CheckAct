@@ -20,12 +20,12 @@ public class Payers
     public int Id { get; set; } = default;
 
     /// <summary>
-    /// Название компании.
+    /// Название организации.
     /// </summary>
     [Column, NotNull] public string Company { get; set; }
 
     /// <summary>
-    /// Юридический адрес компании.
+    /// Юридический адрес организации.
     /// </summary>
     [Column, NotNull] public string Address { get; set; }
 
@@ -50,17 +50,17 @@ public class Payers
     [Column, NotNull] public string Bank { get; set; }
 
     /// <summary>
-    /// Расчетный счёт.
+    /// Расчетный счет.
     /// </summary>
     [Column, NotNull] public string SettlementAccount { get; set; }
 
     /// <summary>
-    /// Кореспондентский счёт.
+    /// Кореспондентский счет.
     /// </summary>
     [Column, NotNull] public string CorrespondentAccount { get; set; }
     
     /// <summary>
     /// БИК.
     /// </summary>
-    [Column, NotNull] public string RcBic { get; set; }
+    [Column, NotNull] public string Bic { get; set; }
 }

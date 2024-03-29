@@ -48,13 +48,13 @@ public class Documents
     /// <summary>
     /// Дата договора-заявки плательщика.
     /// </summary>
-    [Column, Nullable]
+    [Column, NotNull]
     public DateTime PayerContractDate { get; set; }
 
     /// <summary>
     /// Идентификатор маршрута.
     /// </summary>
-    [Column, Nullable]
+    [Column, NotNull]
     public int RoadRouteId { get; set; }
 
     /// <summary>
@@ -66,7 +66,7 @@ public class Documents
     /// <summary>
     /// Идентификатор плательщика.
     /// </summary>
-    [Column, Nullable]
+    [Column, NotNull]
     public int PayerId { get; set; }
 
     /// <summary>
@@ -74,4 +74,10 @@ public class Documents
     /// </summary>
     [Association(ThisKey = nameof(PayerId), OtherKey = nameof(Payer.Id))]
     public Payers Payer { get; set; }
+
+    /// <summary>
+    /// Сумма к оплате.
+    /// </summary>
+    [Column, NotNull]
+    public long Cost { get; set; }
 }
