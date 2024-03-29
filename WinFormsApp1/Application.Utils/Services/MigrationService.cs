@@ -2,11 +2,11 @@
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Utils.Services;
+namespace CheckAct.Utils.Services;
 
 public class MigrationService
 {
-    public static Serilog.ILogger Logger { get; set; }
+    public static Serilog.ILogger? Logger { get; set; }
 
     private static string _connectionString;
 
@@ -24,7 +24,7 @@ public class MigrationService
     /// </summary>
     public static void EnsureDBExists()
     {
-        Logger.Information("Подготовка и запуск миграций");
+        Logger?.Information("Подготовка и запуск миграций");
 
         var serviceProvider = CreateServices(_connectionString);
         using var scope = serviceProvider.CreateScope();
@@ -58,7 +58,7 @@ public class MigrationService
         }
         catch (Exception ex)
         {
-            Logger.Error(ex, "Исключение при выполнении миграции: {Exception}");
+            Logger?.Error(ex, "Исключение при выполнении миграции: {Exception}");
         }
     }
 }

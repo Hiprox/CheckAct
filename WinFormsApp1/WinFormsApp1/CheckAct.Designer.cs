@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace CheckAct.Application
 {
     partial class CheckAct
     {

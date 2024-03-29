@@ -3,7 +3,7 @@ using System.Text;
 
 // A set of C# classes for spelling Russian numerics 
 // Copyright (c) 2002 RSDN Group
-namespace RSDN
+namespace CheckAct.Application
 {
     public class RusNumber
     {

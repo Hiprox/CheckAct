@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{00E9661A-A5D6-43B2-878D-707DD205E004}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Application", "WinFormsApp1\CheckAct.Application.csproj", "{00E9661A-A5D6-43B2-878D-707DD205E004}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Domain", "Application.Domain\Application.Domain.csproj", "{93AC2390-09AF-42AC-9E8A-34ED9163A492}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Domain", "Application.Domain\CheckAct.Domain.csproj", "{93AC2390-09AF-42AC-9E8A-34ED9163A492}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Infrastructure", "Application.Infrastructure\Application.Infrastructure.csproj", "{F1DE5A06-E940-45E7-82B9-BA68B914A410}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Infrastructure", "Application.Infrastructure\CheckAct.Infrastructure.csproj", "{F1DE5A06-E940-45E7-82B9-BA68B914A410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Utils", "Application.Utils\Application.Utils.csproj", "{28A24E0A-922F-4642-B723-8AE8CC80BD05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckAct.Utils", "Application.Utils\CheckAct.Utils.csproj", "{28A24E0A-922F-4642-B723-8AE8CC80BD05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

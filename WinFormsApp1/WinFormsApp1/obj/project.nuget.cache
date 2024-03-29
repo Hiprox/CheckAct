@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n+paEdsMEdgOZg6KuPhjYBPHvcQtzJogYGAzHXqA+A/hsdS75IwUrkalp+JXkHcJ3D6auNLEgUy0tBJszsB/0g==",
+  "dgSpecHash": "hh8XSCW1gIj+zsfTDCmLidMnkjUqXmb03hN+l2+OiFYbE2PFyn8rBX6yt/p8yTG3JJ2xsEVTj2HMtay2KyZ1kQ==",
   "success": true,
-  "projectFilePath": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+  "projectFilePath": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\CheckAct.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anapc\\.nuget\\packages\\documentformat.openxml\\2.7.2\\documentformat.openxml.2.7.2.nupkg.sha512",
     "C:\\Users\\anapc\\.nuget\\packages\\fluentmigrator\\5.2.0\\fluentmigrator.5.2.0.nupkg.sha512",

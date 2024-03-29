@@ -1,4 +1,4 @@
-﻿using Application.Domain.Models;
+﻿using CheckAct.Domain.Models;
 using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;

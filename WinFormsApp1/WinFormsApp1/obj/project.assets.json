@@ -5873,9 +5873,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
-      "projectName": "WinFormsApp1",
-      "projectPath": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\CheckAct.Application.csproj",
+      "projectName": "CheckAct.Application",
+      "projectPath": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\CheckAct.Application.csproj",
       "packagesPath": "C:\\Users\\anapc\\.nuget\\packages\\",
       "outputPath": "D:\\Development\\Project\\NET Core\\CheckAct\\WinFormsApp1\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,4 +1,4 @@
-﻿namespace Application.Domain.Enums;
+﻿namespace CheckAct.Domain.Enums;
 
 public enum CodeType
 {

@@ -1,6 +1,6 @@
 ﻿using LinqToDB.Mapping;
 
-namespace Application.Domain.Models;
+namespace CheckAct.Domain.Models;
 
 /// <summary>
 /// Плательщик.
