@@ -1,28 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <OutputType>WinExe</OutputType>
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
+        <UseWindowsForms>true</UseWindowsForms>
 
-  <ItemGroup>
-    <COMReference Include="Microsoft.Office.Interop.Word">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>7</VersionMinor>
-      <VersionMajor>8</VersionMajor>
-      <Guid>00020905-0000-0000-c000-000000000046</Guid>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
+        <LangVersion>preview</LangVersion>
+        <AnalysisLevel>latest</AnalysisLevel>
 
-  <ItemGroup>
-    <PackageReference Include="TemplateEngine.Docx" Version="1.1.5" />
-  </ItemGroup>
+        <SatelliteResourceLanguages>en;ru</SatelliteResourceLanguages>
+        <NeutralLanguage>ru</NeutralLanguage>
+        <DebugType>embedded</DebugType>
+        <TieredPGO>true</TieredPGO>
+      
+      	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
+        <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="FluentMigrator" Version="5.2.0" />
+      <PackageReference Include="TemplateEngine.Docx" Version="1.1.5" />
+    </ItemGroup>
 </Project>

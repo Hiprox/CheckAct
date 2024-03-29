@@ -1,4 +1,6 @@
-﻿namespace WinFormsApp1
+﻿using System.Windows.Forms;
+
+namespace WinFormsApp1
 {
     partial class CheckAct
     {
