@@ -1,2 +1,0 @@
-C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\win-x64\WinFormsApp1.pdb
-C:\Users\anapc\Documents\GitHub\CheckAct\WinFormsApp1\WinFormsApp1\bin\Release\net7.0-windows\publish\win-x64\WinFormsApp1.exe

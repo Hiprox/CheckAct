@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <OutputType>WinExe</OutputType>
+
+        <UseWindowsForms>true</UseWindowsForms>
+
+        <LangVersion>preview</LangVersion>
+        <AnalysisLevel>latest</AnalysisLevel>
+
+        <SatelliteResourceLanguages>en;ru</SatelliteResourceLanguages>
+        <NeutralLanguage>ru</NeutralLanguage>
+        <DebugType>embedded</DebugType>
+        <TieredPGO>true</TieredPGO>
+      
+      	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+        <GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="FluentMigrator" Version="5.2.0" />
+      <PackageReference Include="TemplateEngine.Docx" Version="1.1.5" />
+    </ItemGroup>
+</Project>
