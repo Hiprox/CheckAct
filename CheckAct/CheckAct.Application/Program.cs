@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Application.Infrastructure.Persistence.Migrations;
 using CheckAct.Application.Utility;
 using Serilog;
 
@@ -22,7 +23,7 @@ namespace CheckAct.Application
                 var dotenv = Path.Combine(root, ".env");
                 DotEnv.Load(dotenv);
 
-                DIContainer.Migrator.EnsureDbExists(DIContainer.Config.SqlConnectionString);
+                DIContainer.Migrator.EnsureDbExists(DIContainer.Config.SqlConnectionString, typeof(CreateDocumentsTable).Assembly);
 
                 ApplicationConfiguration.Initialize();
                 System.Windows.Forms.Application.Run(new CheckAct());
