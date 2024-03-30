@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Domain", "CheckAct
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Infrastructure", "CheckAct.Infrastructure\CheckAct.Infrastructure.csproj", "{F1DE5A06-E940-45E7-82B9-BA68B914A410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckAct.Utils", "CheckAct.Utils\CheckAct.Utils.csproj", "{28A24E0A-922F-4642-B723-8AE8CC80BD05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckAct.Utils", "CheckAct.Utils\CheckAct.Utils.csproj", "{28A24E0A-922F-4642-B723-8AE8CC80BD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckAct.BusinessLogic", "CheckAct.BusinessLogic\CheckAct.BusinessLogic.csproj", "{411E61EB-AA21-4A16-BC1F-37D9E06BCAD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{28A24E0A-922F-4642-B723-8AE8CC80BD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28A24E0A-922F-4642-B723-8AE8CC80BD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28A24E0A-922F-4642-B723-8AE8CC80BD05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{411E61EB-AA21-4A16-BC1F-37D9E06BCAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{411E61EB-AA21-4A16-BC1F-37D9E06BCAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{411E61EB-AA21-4A16-BC1F-37D9E06BCAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{411E61EB-AA21-4A16-BC1F-37D9E06BCAD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

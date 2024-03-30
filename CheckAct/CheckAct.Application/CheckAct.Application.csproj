@@ -19,6 +19,18 @@
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="FluentMigrator" Version="5.2.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="8.0.0" />
+      <PackageReference Include="Npgsql" Version="8.0.2" />
       <PackageReference Include="TemplateEngine.Docx" Version="1.1.5" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\CheckAct.BusinessLogic\CheckAct.BusinessLogic.csproj" />
+      <ProjectReference Include="..\CheckAct.Infrastructure\CheckAct.Infrastructure.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Update=".env">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 </Project>

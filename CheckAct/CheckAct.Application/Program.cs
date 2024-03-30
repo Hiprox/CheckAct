@@ -1,4 +1,9 @@
+using CheckAct.Application.Utilities;
 using System;
+using System.IO;
+using System.Threading.Tasks;
+using CheckAct.Utils.Services;
+using Serilog;
 
 namespace CheckAct.Application
 {
@@ -8,12 +13,29 @@ namespace CheckAct.Application
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static async Task Main()
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new CheckAct());
+            try
+            {
+                var root = Directory.GetCurrentDirectory();
+                var dotenv = Path.Combine(root, ".env");
+                DotEnv.Load(dotenv);
+
+                DIContainer.Migrator.EnsureDbExists(DIContainer.Config.SqlConnectionString);
+
+                ApplicationConfiguration.Initialize();
+                System.Windows.Forms.Application.Run(new CheckAct());
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Unhandled exception");
+            }
+            finally
+            {
+                await Log.CloseAndFlushAsync();
+            }
         }
     }
 }

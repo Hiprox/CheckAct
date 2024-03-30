@@ -22,6 +22,12 @@ public class CreateDocumentsTable : AutoReversingMigration
             .WithColumnDescription("Номер договора-заявки плательщика")
             .WithColumn(nameof(Documents.PayerContractDate)).AsDate().NotNullable()
             .WithColumnDescription("Дата договора-заявки плательщика")
+            .WithColumn(nameof(Documents.RoadRouteId)).AsInt32()
+            .ForeignKey(RoadRoutes.TableName, nameof(RoadRoutes.Id)).NotNullable()
+            .WithColumnDescription($"FK на {RoadRoutes.TableName}.{nameof(RoadRoutes.Id)}")
+            .WithColumn(nameof(Documents.PayerId)).AsInt32().ForeignKey(Payers.TableName, nameof(Payers.Id))
+            .NotNullable()
+            .WithColumnDescription($"FK на {Payers.TableName}.{nameof(Payers.Id)}")
             .WithColumn(nameof(Documents.Cost)).AsInt64().NotNullable()
             .WithColumnDescription("Сумма к оплате");
     }
