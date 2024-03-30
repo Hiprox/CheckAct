@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CheckAct.Application.Utilities;
+namespace CheckAct.Application.Utility;
 
 /// <summary>
 /// Предоставляет методы для работы с файлами .env и установки переменных окружения.

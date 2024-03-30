@@ -3,9 +3,15 @@ using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
 
+/// <summary>
+/// Миграция для создания таблицы документов.
+/// </summary>
 [Migration(20230330033900)]
 public class CreateDocumentsTable : AutoReversingMigration
 {
+    /// <summary>
+    /// Применяет миграцию для создания таблицы документов.
+    /// </summary>
     public override void Up()
     {
         Create.Table(Documents.TableName).InSchema("public")

@@ -3,9 +3,15 @@ using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
 
+/// <summary>
+/// Миграция для создания таблицы маршрутов.
+/// </summary>
 [Migration(20230330031600)]
 public class CreateRoadRoutesTable : AutoReversingMigration
 {
+    /// <summary>
+    /// Применяет миграцию для создания таблицы маршрутов.
+    /// </summary>
     public override void Up()
     {
         Create.Table(RoadRoutes.TableName).InSchema("public")

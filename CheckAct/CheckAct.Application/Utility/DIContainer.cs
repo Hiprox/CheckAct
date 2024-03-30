@@ -1,15 +1,21 @@
-﻿using CheckAct.Utils.Services;
+﻿using System;
+using CheckAct.Utils.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using Serilog;
 
-namespace CheckAct.Application.Utilities;
+namespace CheckAct.Application.Utility;
 
+/// <summary>
+/// Класс-контейнер для управления зависимостями (DI) в приложении.
+/// </summary>
 public static class DIContainer
 {
     private static readonly Lazy<ServiceProvider> LazyServiceProvider = new(InitializeServiceProvider);
 
+    /// <summary>
+    /// Получает поставщика служб (ServiceProvider), который предоставляет доступ к зарегистрированным службам.
+    /// </summary>
     public static ServiceProvider ServiceProvider => LazyServiceProvider.Value;
 
     private static ServiceProvider InitializeServiceProvider()
@@ -24,6 +30,7 @@ public static class DIContainer
 
     private static void ConfigureServices(IServiceCollection services)
     {
+        // Регистрирует конфигурацию приложения, загружая её из переменных окружения.
         services.AddSingleton<IConfiguration>(_ =>
             new ConfigurationBuilder()
                 .AddEnvironmentVariables()

@@ -3,9 +3,15 @@ using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
 
+/// <summary>
+/// Миграция для создания таблицы плательщиков.
+/// </summary>
 [Migration(20230330032300)]
 public class CreatePayersTable : AutoReversingMigration
 {
+    /// <summary>
+    /// Применяет миграцию для создания таблицы плательщиков.
+    /// </summary>
     public override void Up()
     {
         Create.Table(Payers.TableName).InSchema("public")

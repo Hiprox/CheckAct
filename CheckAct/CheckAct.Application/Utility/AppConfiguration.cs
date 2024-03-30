@@ -1,6 +1,6 @@
-﻿namespace CheckAct.Application;
+﻿using Microsoft.Extensions.Configuration;
 
-using Microsoft.Extensions.Configuration;
+namespace CheckAct.Application.Utility;
 
 /// <summary>
 /// Предоставляет доступ к настройкам конфигурации приложения.
