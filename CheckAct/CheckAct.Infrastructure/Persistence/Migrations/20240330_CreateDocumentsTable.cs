@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Persistence.Migrations;
 /// <summary>
 /// Миграция для создания таблицы документов.
 /// </summary>
-[Migration(20230330033900)]
+[Migration(20230330033900, "Cоздание таблицы документов")]
 public class CreateDocumentsTable : AutoReversingMigration
 {
     /// <summary>

@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Persistence.Migrations;
 /// <summary>
 /// Миграция для создания таблицы плательщиков.
 /// </summary>
-[Migration(20230330032300)]
+[Migration(20230330032300, "Cоздание таблицы плательщиков")]
 public class CreatePayersTable : AutoReversingMigration
 {
     /// <summary>
