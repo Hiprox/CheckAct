@@ -1,12 +1,12 @@
 ﻿using LinqToDB.Mapping;
 
-namespace CheckAct.Domain.Models;
+namespace CheckAct.Domain.RoadRoutes;
 
 /// <summary>
 /// Маршрут.
 /// </summary>
 [Table(TableName)]
-public class RoadRoutes
+public class RoadRoute : IAggregateRoot
 {
     /// <summary>
     /// Название таблицы.

@@ -1,4 +1,4 @@
-﻿using CheckAct.Domain.Models;
+﻿using CheckAct.Domain.RoadRoutes;
 using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
@@ -14,15 +14,15 @@ public class CreateRoadRoutesTable : AutoReversingMigration
     /// </summary>
     public override void Up()
     {
-        Create.Table(RoadRoutes.TableName).InSchema("public")
-            .WithColumn(nameof(RoadRoutes.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(RoadRoutes.Source)).AsString(512).NotNullable()
+        Create.Table(RoadRoute.TableName).InSchema("public")
+            .WithColumn(nameof(RoadRoute.Id)).AsInt32().PrimaryKey().Identity()
+            .WithColumn(nameof(RoadRoute.Source)).AsString(512).NotNullable()
             .WithColumnDescription("Адрес погрузки")
-            .WithColumn(nameof(RoadRoutes.SourceDate)).AsDate().NotNullable()
+            .WithColumn(nameof(RoadRoute.SourceDate)).AsDate().NotNullable()
             .WithColumnDescription("Дата погрузки")
-            .WithColumn(nameof(RoadRoutes.Destination)).AsString(512).NotNullable()
+            .WithColumn(nameof(RoadRoute.Destination)).AsString(512).NotNullable()
             .WithColumnDescription("Адрес разгрузки")
-            .WithColumn(nameof(RoadRoutes.DestinationDate)).AsDate().NotNullable()
+            .WithColumn(nameof(RoadRoute.DestinationDate)).AsDate().NotNullable()
             .WithColumnDescription("Дата разгрузки");
     }
 }

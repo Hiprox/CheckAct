@@ -1,4 +1,6 @@
-﻿using CheckAct.Domain.Models;
+﻿using CheckAct.Domain.Documents;
+using CheckAct.Domain.Payers;
+using CheckAct.Domain.RoadRoutes;
 using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
@@ -14,17 +16,17 @@ public class CreateDocumentsTable : AutoReversingMigration
     /// </summary>
     public override void Up()
     {
-        Create.Table(Documents.TableName).InSchema("public")
-            .WithColumn(nameof(Documents.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Documents.PayerContractNumber)).AsString(64).Nullable()
+        Create.Table(Document.TableName).InSchema("public")
+            .WithColumn(nameof(Document.Id)).AsInt32().PrimaryKey().Identity()
+            .WithColumn(nameof(Document.PayerContractNumber)).AsString(64).Nullable()
             .WithColumnDescription("Номер договора-заявки плательщика")
-            .WithColumn(nameof(Documents.PayerContractDate)).AsDate().NotNullable()
+            .WithColumn(nameof(Document.PayerContractDate)).AsDate().NotNullable()
             .WithColumnDescription("Дата договора-заявки плательщика")
-            .WithColumn(nameof(Documents.RoadRouteId)).AsInt32()
-            .ForeignKey(RoadRoutes.TableName, nameof(RoadRoutes.Id)).NotNullable()
-            .WithColumnDescription($"FK на {RoadRoutes.TableName}.{nameof(RoadRoutes.Id)}")
-            .WithColumn(nameof(Documents.PayerId)).AsInt32().ForeignKey(Payers.TableName, nameof(Payers.Id))
+            .WithColumn(nameof(Document.RoadRouteId)).AsInt32()
+            .ForeignKey(RoadRoute.TableName, nameof(RoadRoute.Id)).NotNullable()
+            .WithColumnDescription($"FK на {RoadRoute.TableName}.{nameof(RoadRoute.Id)}")
+            .WithColumn(nameof(Document.PayerId)).AsInt32().ForeignKey(Payer.TableName, nameof(Payer.Id))
             .NotNullable()
-            .WithColumnDescription($"FK на {Payers.TableName}.{nameof(Payers.Id)}");
+            .WithColumnDescription($"FK на {Payer.TableName}.{nameof(Payer.Id)}");
     }
 }

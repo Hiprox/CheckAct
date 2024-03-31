@@ -1,4 +1,5 @@
-﻿using CheckAct.Domain.Models;
+﻿using CheckAct.Domain.Acts;
+using CheckAct.Domain.Documents;
 using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
@@ -14,13 +15,13 @@ public class CreateActsTable : AutoReversingMigration
     /// </summary>
     public override void Up()
     {
-        Create.Table(Acts.TableName).InSchema("public")
-            .WithColumn(nameof(Acts.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Acts.Number)).AsInt32().NotNullable()
+        Create.Table(Act.TableName).InSchema("public")
+            .WithColumn(nameof(Act.Id)).AsInt32().PrimaryKey().Identity()
+            .WithColumn(nameof(Act.Number)).AsInt32().NotNullable()
             .WithColumnDescription("Номер акта")
-            .WithColumn(nameof(Acts.Date)).AsDate().NotNullable()
+            .WithColumn(nameof(Act.Date)).AsDate().NotNullable()
             .WithColumnDescription("Дата выставления акта")
-            .WithColumn(nameof(Acts.DocumentId)).AsInt32().ForeignKey(Documents.TableName, nameof(Documents.Id)).NotNullable()
-            .WithColumnDescription($"FK на {Documents.TableName}.{nameof(Documents.Id)}");
+            .WithColumn(nameof(Act.DocumentId)).AsInt32().ForeignKey(Document.TableName, nameof(Document.Id)).NotNullable()
+            .WithColumnDescription($"FK на {Document.TableName}.{nameof(Document.Id)}");
     }
 }

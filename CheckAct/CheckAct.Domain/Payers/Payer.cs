@@ -1,12 +1,12 @@
 ﻿using LinqToDB.Mapping;
 
-namespace CheckAct.Domain.Models;
+namespace CheckAct.Domain.Payers;
 
 /// <summary>
 /// Плательщик.
 /// </summary>
 [Table(TableName)]
-public class Payers
+public class Payer : IAggregateRoot
 {
     /// <summary>
     /// Название таблицы.
@@ -58,7 +58,7 @@ public class Payers
     /// Кореспондентский счет.
     /// </summary>
     [Column, NotNull] public string CorrespondentAccount { get; set; }
-    
+
     /// <summary>
     /// БИК.
     /// </summary>

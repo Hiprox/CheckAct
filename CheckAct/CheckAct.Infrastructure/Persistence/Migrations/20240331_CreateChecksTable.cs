@@ -1,4 +1,5 @@
-﻿using CheckAct.Domain.Models;
+﻿using CheckAct.Domain.Checks;
+using CheckAct.Domain.Documents;
 using FluentMigrator;
 
 namespace Application.Infrastructure.Persistence.Migrations;
@@ -14,15 +15,15 @@ public class CreateCheckTable : AutoReversingMigration
     /// </summary>
     public override void Up()
     {
-        Create.Table(Checks.TableName).InSchema("public")
-            .WithColumn(nameof(Checks.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Checks.Number)).AsInt32().NotNullable()
+        Create.Table(Check.TableName).InSchema("public")
+            .WithColumn(nameof(Check.Id)).AsInt32().PrimaryKey().Identity()
+            .WithColumn(nameof(Check.Number)).AsInt32().NotNullable()
             .WithColumnDescription("Номер счета")
-            .WithColumn(nameof(Checks.Date)).AsDate().NotNullable()
+            .WithColumn(nameof(Check.Date)).AsDate().NotNullable()
             .WithColumnDescription("Дата выставления счета")
-            .WithColumn(nameof(Checks.Cost)).AsInt64().NotNullable()
+            .WithColumn(nameof(Check.Cost)).AsInt64().NotNullable()
             .WithColumnDescription("Сумма к оплате")
-            .WithColumn(nameof(Checks.DocumentId)).AsInt32().ForeignKey(Documents.TableName, nameof(Documents.Id)).NotNullable()
-            .WithColumnDescription($"FK на {Documents.TableName}.{nameof(Documents.Id)}");
+            .WithColumn(nameof(Check.DocumentId)).AsInt32().ForeignKey(Document.TableName, nameof(Document.Id)).NotNullable()
+            .WithColumnDescription($"FK на {Document.TableName}.{nameof(Document.Id)}");
     }
 }

@@ -1,17 +1,18 @@
-﻿using LinqToDB.Mapping;
+﻿using CheckAct.Domain.Documents;
+using LinqToDB.Mapping;
 
-namespace CheckAct.Domain.Models;
+namespace CheckAct.Domain.Acts;
 
 /// <summary>
-/// Счет.
+/// Акт.
 /// </summary>
 [Table(TableName)]
-public class Checks
+public class Act : IAggregateRoot
 {
     /// <summary>
     /// Название таблицы.
     /// </summary>
-    public const string TableName = "Checks";
+    public const string TableName = "Acts";
 
     /// <summary>
     /// Первичный ключ.
@@ -32,12 +33,6 @@ public class Checks
     public DateTime Date { get; set; }
 
     /// <summary>
-    /// Цена.
-    /// </summary>
-    [Column, NotNull]
-    public long Cost { get; set; }
-
-    /// <summary>
     /// Идентификатор документа которому принаделжит счет.
     /// </summary>
     [Column, NotNull]
@@ -47,5 +42,5 @@ public class Checks
     /// Документ которому принадлежит счет.
     /// </summary>
     [Association(ThisKey = nameof(DocumentId), OtherKey = nameof(Document.Id))]
-    public Documents Document { get; set; }
+    public Document Document { get; set; }
 }

@@ -1,12 +1,15 @@
 ﻿using LinqToDB.Mapping;
+using CheckAct.Domain.Acts;
+using CheckAct.Domain.Checks;
+using CheckAct.Domain.Payers;
 
-namespace CheckAct.Domain.Models;
+namespace CheckAct.Domain.Documents;
 
 /// <summary>
 /// Документ.
 /// </summary>
 [Table(TableName)]
-public class Documents
+public class Document : IAggregateRoot
 {
     /// <summary>
     /// Название таблицы.
@@ -22,14 +25,14 @@ public class Documents
     /// <summary>
     /// Акт.
     /// </summary>
-    [Association(ThisKey = nameof(Id), OtherKey = nameof(Acts.DocumentId))]
-    public Acts Act { get; set; }
+    [Association(ThisKey = nameof(Id), OtherKey = nameof(Act.DocumentId))]
+    public Act Act { get; set; }
 
     /// <summary>
     /// Список счетов.
     /// </summary>
-    [Association(ThisKey = nameof(Id), OtherKey = nameof(Models.Checks.DocumentId))]
-    public ICollection<Checks> Checks { get; set; }
+    [Association(ThisKey = nameof(Id), OtherKey = nameof(Check.DocumentId))]
+    public ICollection<Check> Checks { get; set; }
 
     /// <summary>
     /// Номер договора-заявки плательщика.
@@ -53,7 +56,7 @@ public class Documents
     /// Маршрут.
     /// </summary>
     [Association(ThisKey = nameof(RoadRouteId), OtherKey = nameof(RoadRoute.Id))]
-    public RoadRoutes RoadRoute { get; set; }
+    public RoadRoutes.RoadRoute RoadRoute { get; set; }
 
     /// <summary>
     /// Идентификатор плательщика.
@@ -65,7 +68,7 @@ public class Documents
     /// Плательщик.
     /// </summary>
     [Association(ThisKey = nameof(PayerId), OtherKey = nameof(Payer.Id))]
-    public Payers Payer { get; set; }
+    public Payer Payer { get; set; }
 
     /// <summary>
     /// Сумма к оплате.
