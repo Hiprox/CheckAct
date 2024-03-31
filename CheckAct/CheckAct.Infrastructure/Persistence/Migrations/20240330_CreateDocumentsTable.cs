@@ -16,14 +16,6 @@ public class CreateDocumentsTable : AutoReversingMigration
     {
         Create.Table(Documents.TableName).InSchema("public")
             .WithColumn(nameof(Documents.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Documents.CheckNumber)).AsInt32().NotNullable()
-            .WithColumnDescription("Номер счета")
-            .WithColumn(nameof(Documents.CheckDate)).AsDate().NotNullable()
-            .WithColumnDescription("Дата выставления счета")
-            .WithColumn(nameof(Documents.ActNumber)).AsInt32().NotNullable()
-            .WithColumnDescription("Номер акта")
-            .WithColumn(nameof(Documents.ActDate)).AsDate().NotNullable()
-            .WithColumnDescription("Дата выставления акта")
             .WithColumn(nameof(Documents.PayerContractNumber)).AsString(64).Nullable()
             .WithColumnDescription("Номер договора-заявки плательщика")
             .WithColumn(nameof(Documents.PayerContractDate)).AsDate().NotNullable()
@@ -33,8 +25,6 @@ public class CreateDocumentsTable : AutoReversingMigration
             .WithColumnDescription($"FK на {RoadRoutes.TableName}.{nameof(RoadRoutes.Id)}")
             .WithColumn(nameof(Documents.PayerId)).AsInt32().ForeignKey(Payers.TableName, nameof(Payers.Id))
             .NotNullable()
-            .WithColumnDescription($"FK на {Payers.TableName}.{nameof(Payers.Id)}")
-            .WithColumn(nameof(Documents.Cost)).AsInt64().NotNullable()
-            .WithColumnDescription("Сумма к оплате");
+            .WithColumnDescription($"FK на {Payers.TableName}.{nameof(Payers.Id)}");
     }
 }

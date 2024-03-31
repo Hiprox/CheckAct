@@ -22,10 +22,24 @@ public class RoadRoutes
     /// <summary>
     /// Адрес погрузки.
     /// </summary>
-    [Column, NotNull] public string Source { get; set; }
+    [Column, NotNull]
+    public string Source { get; set; }
+
+    /// <summary>
+    /// Дата погрузки.
+    /// </summary>
+    [Column, NotNull]
+    public DateTime SourceDate { get; set; }
 
     /// <summary>
     /// Адрес разгрузки.
     /// </summary>
-    [Column, NotNull] public string Destination { get; set; }
+    [Column, NotNull]
+    public string Destination { get; set; }
+
+    /// <summary>
+    /// Дата разгрузки.
+    /// </summary>
+    [Column, NotNull]
+    public DateTime DestinationDate { get; set; }
 }

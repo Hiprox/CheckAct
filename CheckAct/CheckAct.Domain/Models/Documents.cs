@@ -20,24 +20,16 @@ public class Documents
     public int Id { get; set; } = default;
 
     /// <summary>
-    /// Номер счёта.
+    /// Акт.
     /// </summary>
-    [Column, NotNull] public string CheckNumber { get; set; }
+    [Association(ThisKey = nameof(Id), OtherKey = nameof(Acts.DocumentId))]
+    public Acts Act { get; set; }
 
     /// <summary>
-    /// Дата выставления счёта.
+    /// Список счетов.
     /// </summary>
-    [Column, NotNull] public DateTime CheckDate { get; set; }
-
-    /// <summary>
-    /// Номер акта.
-    /// </summary>
-    [Column, NotNull] public string ActNumber { get; set; }
-
-    /// <summary>
-    /// Дата выставления акта.
-    /// </summary>
-    [Column, NotNull] public DateTime ActDate { get; set; }
+    [Association(ThisKey = nameof(Id), OtherKey = nameof(Models.Checks.DocumentId))]
+    public ICollection<Checks> Checks { get; set; }
 
     /// <summary>
     /// Номер договора-заявки плательщика.

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CheckAct.BusinessLogic\CheckAct.BusinessLogic.csproj" />
+    <ProjectReference Include="..\CheckAct.Domain\CheckAct.Domain.csproj" />
   </ItemGroup>
 
 </Project>
