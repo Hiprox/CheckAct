@@ -18,7 +18,11 @@ public class CreateRoadRoutesTable : AutoReversingMigration
             .WithColumn(nameof(RoadRoutes.Id)).AsInt32().PrimaryKey().Identity()
             .WithColumn(nameof(RoadRoutes.Source)).AsString(512).NotNullable()
             .WithColumnDescription("Адрес погрузки")
+            .WithColumn(nameof(RoadRoutes.SourceDate)).AsDate().NotNullable()
+            .WithColumnDescription("Дата погрузки")
             .WithColumn(nameof(RoadRoutes.Destination)).AsString(512).NotNullable()
-            .WithColumnDescription("Адрес разгрузки");
+            .WithColumnDescription("Адрес разгрузки")
+            .WithColumn(nameof(RoadRoutes.DestinationDate)).AsDate().NotNullable()
+            .WithColumnDescription("Дата разгрузки");
     }
 }
