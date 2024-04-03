@@ -3,6 +3,8 @@ using System.IO;
 using System.Threading.Tasks;
 using Application.Infrastructure.Persistence.Migrations;
 using CheckAct.Application.Utility;
+using CheckAct.Infrastructure;
+using LinqToDB;
 using Serilog;
 
 namespace CheckAct.Application
@@ -24,6 +26,9 @@ namespace CheckAct.Application
                 DotEnv.Load(dotenv);
 
                 DIContainer.Migrator.EnsureDbExists(DIContainer.Config.SqlConnectionString, typeof(CreateDocumentsTable).Assembly);
+
+                CheckActContext.SetOptions(new DataOptions()
+                    .UsePostgreSQL(DIContainer.Config.SqlConnectionString));
 
                 ApplicationConfiguration.Initialize();
                 System.Windows.Forms.Application.Run(new CheckAct());
