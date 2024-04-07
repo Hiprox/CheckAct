@@ -32,7 +32,7 @@ public class Document : IAggregateRoot
     /// Список счетов.
     /// </summary>
     [Association(ThisKey = nameof(Id), OtherKey = nameof(Check.DocumentId))]
-    public ICollection<Check> Checks { get; set; }
+    public IEnumerable<Check> Checks { get; set; }
 
     /// <summary>
     /// Номер договора-заявки плательщика.
@@ -69,10 +69,4 @@ public class Document : IAggregateRoot
     /// </summary>
     [Association(ThisKey = nameof(PayerId), OtherKey = nameof(Payer.Id))]
     public Payer Payer { get; set; }
-
-    /// <summary>
-    /// Сумма к оплате.
-    /// </summary>
-    [Column, NotNull]
-    public long Cost { get; set; }
 }

@@ -1,4 +1,11 @@
 ﻿using System;
+using Boxed.Mapping;
+using CheckAct.BusinessLogic;
+using CheckAct.BusinessLogic.Dto;
+using CheckAct.BusinessLogic.Interfaces;
+using CheckAct.BusinessLogic.Mappers;
+using CheckAct.Domain.Documents;
+using CheckAct.Infrastructure.Stores;
 using CheckAct.Utils.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -55,6 +62,15 @@ public static class DIContainer
             var logger = ServiceProvider.GetService<ILogger>();
             return new MigrationService(logger);
         });
+
+        // Mappers
+        services.AddSingleton<IImmutableMapper<DocumentDto, Document>, DocumentImmutableMapper>();
+
+        // Business Logic
+        services.AddSingleton<IDocumentService, DocumentService>();
+        
+        // Infrastructure
+        services.AddSingleton<IDocumentStore, DocumentStore>();
     }
 
     /// <summary>

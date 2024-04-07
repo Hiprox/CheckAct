@@ -17,7 +17,7 @@ public class CreateActsTable : AutoReversingMigration
     {
         Create.Table(Act.TableName).InSchema("public")
             .WithColumn(nameof(Act.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Act.Number)).AsInt32().NotNullable()
+            .WithColumn(nameof(Act.Number)).AsString(32).NotNullable()
             .WithColumnDescription("Номер акта")
             .WithColumn(nameof(Act.Date)).AsDate().NotNullable()
             .WithColumnDescription("Дата выставления акта")

@@ -30,613 +30,612 @@ namespace CheckAct.Application
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tbox_BIC = new System.Windows.Forms.MaskedTextBox();
-            this.tbox_correspondentAccount = new System.Windows.Forms.MaskedTextBox();
-            this.tbox_currentAccount = new System.Windows.Forms.MaskedTextBox();
-            this.bank = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lable11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tbox_where = new System.Windows.Forms.TextBox();
-            this.tbox_from = new System.Windows.Forms.TextBox();
-            this.address = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.company = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.contractNumber = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTime_check = new System.Windows.Forms.DateTimePicker();
-            this.dateTime_act = new System.Windows.Forms.DateTimePicker();
-            this.tbox_check = new System.Windows.Forms.TextBox();
-            this.tbox_act = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.price = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbox_TIN = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbox_code = new System.Windows.Forms.MaskedTextBox();
-            this.rb_KPP = new System.Windows.Forms.RadioButton();
-            this.rb_OGRNIP = new System.Windows.Forms.RadioButton();
-            this.rb_OGRN = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTime_Contract = new System.Windows.Forms.DateTimePicker();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            bicTextBox = new MaskedTextBox();
+            correspondentAccountTextBox = new MaskedTextBox();
+            settlementAccountTextBox = new MaskedTextBox();
+            bankTextBox = new TextBox();
+            label8 = new Label();
+            label10 = new Label();
+            lable11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            dstRouteTextBox = new TextBox();
+            srcRouteTextBox = new TextBox();
+            addressTextBox = new TextBox();
+            label4 = new Label();
+            label7 = new Label();
+            companyTextBox = new TextBox();
+            label3 = new Label();
+            payerContractNumberTextBox = new TextBox();
+            label6 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            checkDate = new DateTimePicker();
+            actDate = new DateTimePicker();
+            checkNumberTextBox = new TextBox();
+            actNumberTextBox = new TextBox();
+            panel1 = new Panel();
+            submitButton = new Button();
+            groupBox5 = new GroupBox();
+            label5 = new Label();
+            cost = new TextBox();
+            label9 = new Label();
+            groupBox4 = new GroupBox();
+            groupBox3 = new GroupBox();
+            label15 = new Label();
+            innTextBox = new MaskedTextBox();
+            groupBox1 = new GroupBox();
+            codeTextBox = new MaskedTextBox();
+            kppRadioButton = new RadioButton();
+            ogrnipRadioButton = new RadioButton();
+            ogrnRadioButton = new RadioButton();
+            groupBox2 = new GroupBox();
+            payerContractDate = new DateTimePicker();
+            errorProvider1 = new ErrorProvider(components);
+            panel1.SuspendLayout();
+            groupBox5.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            SuspendLayout();
             // 
-            // tbox_BIC
+            // bicTextBox
             // 
-            this.tbox_BIC.HidePromptOnLeave = true;
-            this.tbox_BIC.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tbox_BIC.Location = new System.Drawing.Point(62, 291);
-            this.tbox_BIC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_BIC.Mask = "0 0  0 0  0 0  0 0 0";
-            this.tbox_BIC.Name = "tbox_BIC";
-            this.tbox_BIC.Size = new System.Drawing.Size(131, 25);
-            this.tbox_BIC.TabIndex = 22;
-            this.tbox_BIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_BIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            bicTextBox.HidePromptOnLeave = true;
+            bicTextBox.InsertKeyMode = InsertKeyMode.Overwrite;
+            bicTextBox.Location = new System.Drawing.Point(62, 291);
+            bicTextBox.Margin = new Padding(3, 2, 3, 2);
+            bicTextBox.Mask = "0 0  0 0  0 0  0 0 0";
+            bicTextBox.Name = "bicTextBox";
+            bicTextBox.Size = new System.Drawing.Size(131, 25);
+            bicTextBox.TabIndex = 22;
+            bicTextBox.TextAlign = HorizontalAlignment.Center;
+            bicTextBox.KeyPress += IsDigit_KeyPress;
             // 
-            // tbox_correspondentAccount
+            // correspondentAccountTextBox
             // 
-            this.tbox_correspondentAccount.HidePromptOnLeave = true;
-            this.tbox_correspondentAccount.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tbox_correspondentAccount.Location = new System.Drawing.Point(62, 262);
-            this.tbox_correspondentAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_correspondentAccount.Mask = "0 0 0  0 0  0 0 0  0  0 0 0 0  0 0 0 0 0 0 0";
-            this.tbox_correspondentAccount.Name = "tbox_correspondentAccount";
-            this.tbox_correspondentAccount.Size = new System.Drawing.Size(250, 25);
-            this.tbox_correspondentAccount.TabIndex = 21;
-            this.tbox_correspondentAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_correspondentAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            correspondentAccountTextBox.HidePromptOnLeave = true;
+            correspondentAccountTextBox.InsertKeyMode = InsertKeyMode.Overwrite;
+            correspondentAccountTextBox.Location = new System.Drawing.Point(62, 262);
+            correspondentAccountTextBox.Margin = new Padding(3, 2, 3, 2);
+            correspondentAccountTextBox.Mask = "0 0 0  0 0  0 0 0  0  0 0 0 0  0 0 0 0 0 0 0";
+            correspondentAccountTextBox.Name = "correspondentAccountTextBox";
+            correspondentAccountTextBox.Size = new System.Drawing.Size(250, 25);
+            correspondentAccountTextBox.TabIndex = 21;
+            correspondentAccountTextBox.TextAlign = HorizontalAlignment.Center;
+            correspondentAccountTextBox.KeyPress += IsDigit_KeyPress;
             // 
-            // tbox_currentAccount
+            // settlementAccountTextBox
             // 
-            this.tbox_currentAccount.HidePromptOnLeave = true;
-            this.tbox_currentAccount.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tbox_currentAccount.Location = new System.Drawing.Point(62, 235);
-            this.tbox_currentAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_currentAccount.Mask = "0 0 0  0 0  0 0 0  0  0 0 0 0  0 0 0 0 0 0 0";
-            this.tbox_currentAccount.Name = "tbox_currentAccount";
-            this.tbox_currentAccount.Size = new System.Drawing.Size(250, 25);
-            this.tbox_currentAccount.TabIndex = 20;
-            this.tbox_currentAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_currentAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            settlementAccountTextBox.HidePromptOnLeave = true;
+            settlementAccountTextBox.InsertKeyMode = InsertKeyMode.Overwrite;
+            settlementAccountTextBox.Location = new System.Drawing.Point(62, 235);
+            settlementAccountTextBox.Margin = new Padding(3, 2, 3, 2);
+            settlementAccountTextBox.Mask = "0 0 0  0 0  0 0 0  0  0 0 0 0  0 0 0 0 0 0 0";
+            settlementAccountTextBox.Name = "settlementAccountTextBox";
+            settlementAccountTextBox.Size = new System.Drawing.Size(250, 25);
+            settlementAccountTextBox.TabIndex = 20;
+            settlementAccountTextBox.TextAlign = HorizontalAlignment.Center;
+            settlementAccountTextBox.KeyPress += IsDigit_KeyPress;
             // 
-            // bank
+            // bankTextBox
             // 
-            this.bank.Location = new System.Drawing.Point(62, 206);
-            this.bank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bank.Name = "bank";
-            this.bank.Size = new System.Drawing.Size(363, 25);
-            this.bank.TabIndex = 19;
-            this.bank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            bankTextBox.Location = new System.Drawing.Point(62, 206);
+            bankTextBox.Margin = new Padding(3, 2, 3, 2);
+            bankTextBox.Name = "bankTextBox";
+            bankTextBox.Size = new System.Drawing.Size(363, 25);
+            bankTextBox.TabIndex = 19;
+            bankTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(19, 48);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(4);
-            this.label8.Size = new System.Drawing.Size(52, 27);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Куда";
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label8.Location = new System.Drawing.Point(19, 48);
+            label8.Name = "label8";
+            label8.Padding = new Padding(4);
+            label8.Size = new System.Drawing.Size(52, 27);
+            label8.TabIndex = 7;
+            label8.Text = "Куда";
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(20, 233);
-            this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(4);
-            this.label10.Size = new System.Drawing.Size(41, 27);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Р/С";
+            label10.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label10.AutoSize = true;
+            label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label10.Location = new System.Drawing.Point(20, 233);
+            label10.Name = "label10";
+            label10.Padding = new Padding(4);
+            label10.Size = new System.Drawing.Size(41, 27);
+            label10.TabIndex = 9;
+            label10.Text = "Р/С";
             // 
             // lable11
             // 
-            this.lable11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lable11.AutoSize = true;
-            this.lable11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lable11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lable11.Location = new System.Drawing.Point(19, 260);
-            this.lable11.Name = "lable11";
-            this.lable11.Padding = new System.Windows.Forms.Padding(4);
-            this.lable11.Size = new System.Drawing.Size(44, 27);
-            this.lable11.TabIndex = 10;
-            this.lable11.Text = "К/С";
+            lable11.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lable11.AutoSize = true;
+            lable11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            lable11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            lable11.Location = new System.Drawing.Point(19, 260);
+            lable11.Name = "lable11";
+            lable11.Padding = new Padding(4);
+            lable11.Size = new System.Drawing.Size(44, 27);
+            lable11.TabIndex = 10;
+            lable11.Text = "К/С";
             // 
             // label12
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(5, 208);
-            this.label12.Name = "label12";
-            this.label12.Padding = new System.Windows.Forms.Padding(4);
-            this.label12.Size = new System.Drawing.Size(54, 27);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Банк";
+            label12.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label12.AutoSize = true;
+            label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label12.Location = new System.Drawing.Point(5, 208);
+            label12.Name = "label12";
+            label12.Padding = new Padding(4);
+            label12.Size = new System.Drawing.Size(54, 27);
+            label12.TabIndex = 11;
+            label12.Text = "Банк";
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label13.Location = new System.Drawing.Point(9, 291);
-            this.label13.Name = "label13";
-            this.label13.Padding = new System.Windows.Forms.Padding(4);
-            this.label13.Size = new System.Drawing.Size(52, 27);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "БИК";
+            label13.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label13.AutoSize = true;
+            label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label13.Location = new System.Drawing.Point(9, 291);
+            label13.Name = "label13";
+            label13.Padding = new Padding(4);
+            label13.Size = new System.Drawing.Size(52, 27);
+            label13.TabIndex = 12;
+            label13.Text = "БИК";
             // 
-            // tbox_where
+            // dstRouteTextBox
             // 
-            this.tbox_where.Location = new System.Drawing.Point(77, 50);
-            this.tbox_where.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_where.Name = "tbox_where";
-            this.tbox_where.Size = new System.Drawing.Size(173, 25);
-            this.tbox_where.TabIndex = 9;
-            this.tbox_where.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            dstRouteTextBox.Location = new System.Drawing.Point(77, 50);
+            dstRouteTextBox.Margin = new Padding(3, 2, 3, 2);
+            dstRouteTextBox.Name = "dstRouteTextBox";
+            dstRouteTextBox.Size = new System.Drawing.Size(173, 25);
+            dstRouteTextBox.TabIndex = 9;
+            dstRouteTextBox.TextAlign = HorizontalAlignment.Center;
             // 
-            // tbox_from
+            // srcRouteTextBox
             // 
-            this.tbox_from.Location = new System.Drawing.Point(77, 21);
-            this.tbox_from.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_from.Name = "tbox_from";
-            this.tbox_from.Size = new System.Drawing.Size(173, 25);
-            this.tbox_from.TabIndex = 8;
-            this.tbox_from.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            srcRouteTextBox.Location = new System.Drawing.Point(77, 21);
+            srcRouteTextBox.Margin = new Padding(3, 2, 3, 2);
+            srcRouteTextBox.Name = "srcRouteTextBox";
+            srcRouteTextBox.Size = new System.Drawing.Size(173, 25);
+            srcRouteTextBox.TabIndex = 8;
+            srcRouteTextBox.TextAlign = HorizontalAlignment.Center;
             // 
-            // address
+            // addressTextBox
             // 
-            this.address.Location = new System.Drawing.Point(102, 59);
-            this.address.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(525, 25);
-            this.address.TabIndex = 12;
-            this.address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            addressTextBox.Location = new System.Drawing.Point(102, 59);
+            addressTextBox.Margin = new Padding(3, 2, 3, 2);
+            addressTextBox.Name = "addressTextBox";
+            addressTextBox.Size = new System.Drawing.Size(525, 25);
+            addressTextBox.TabIndex = 12;
+            addressTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(37, 55);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(4);
-            this.label4.Size = new System.Drawing.Size(59, 27);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Адрес";
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label4.Location = new System.Drawing.Point(37, 55);
+            label4.Name = "label4";
+            label4.Padding = new Padding(4);
+            label4.Size = new System.Drawing.Size(59, 27);
+            label4.TabIndex = 3;
+            label4.Text = "Адрес";
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(2, 21);
-            this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(4);
-            this.label7.Size = new System.Drawing.Size(69, 27);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Откуда";
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label7.Location = new System.Drawing.Point(2, 21);
+            label7.Name = "label7";
+            label7.Padding = new Padding(4);
+            label7.Size = new System.Drawing.Size(69, 27);
+            label7.TabIndex = 6;
+            label7.Text = "Откуда";
             // 
-            // company
+            // companyTextBox
             // 
-            this.company.Location = new System.Drawing.Point(102, 28);
-            this.company.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.company.Name = "company";
-            this.company.Size = new System.Drawing.Size(210, 25);
-            this.company.TabIndex = 11;
-            this.company.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            companyTextBox.Location = new System.Drawing.Point(102, 28);
+            companyTextBox.Margin = new Padding(3, 2, 3, 2);
+            companyTextBox.Name = "companyTextBox";
+            companyTextBox.Size = new System.Drawing.Size(210, 25);
+            companyTextBox.TabIndex = 11;
+            companyTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(5, 34);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(4);
-            this.label3.Size = new System.Drawing.Size(91, 27);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Компания";
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label3.Location = new System.Drawing.Point(5, 34);
+            label3.Name = "label3";
+            label3.Padding = new Padding(4);
+            label3.Size = new System.Drawing.Size(91, 27);
+            label3.TabIndex = 2;
+            label3.Text = "Компания";
             // 
-            // contractNumber
+            // payerContractNumberTextBox
             // 
-            this.contractNumber.Location = new System.Drawing.Point(159, 84);
-            this.contractNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.contractNumber.Name = "contractNumber";
-            this.contractNumber.Size = new System.Drawing.Size(87, 25);
-            this.contractNumber.TabIndex = 6;
-            this.contractNumber.Text = "Б/Н";
-            this.contractNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            payerContractNumberTextBox.Location = new System.Drawing.Point(159, 84);
+            payerContractNumberTextBox.Margin = new Padding(3, 2, 3, 2);
+            payerContractNumberTextBox.Name = "payerContractNumberTextBox";
+            payerContractNumberTextBox.Size = new System.Drawing.Size(87, 25);
+            payerContractNumberTextBox.TabIndex = 6;
+            payerContractNumberTextBox.Text = "Б/Н";
+            payerContractNumberTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(4, 84);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(4);
-            this.label6.Size = new System.Drawing.Size(150, 27);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Договор-заявка №";
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label6.Location = new System.Drawing.Point(4, 84);
+            label6.Name = "label6";
+            label6.Padding = new Padding(4);
+            label6.Size = new System.Drawing.Size(150, 27);
+            label6.TabIndex = 5;
+            label6.Text = "Договор-заявка №";
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.No;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(4, 24);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(4);
-            this.label1.Size = new System.Drawing.Size(73, 27);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Счёт №";
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Cursor = Cursors.No;
+            label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(4, 24);
+            label1.Name = "label1";
+            label1.Padding = new Padding(4);
+            label1.Size = new System.Drawing.Size(73, 27);
+            label1.TabIndex = 0;
+            label1.Text = "Счёт №";
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 48);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(4);
-            this.label2.Size = new System.Drawing.Size(65, 27);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Акт №";
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label2.Location = new System.Drawing.Point(12, 48);
+            label2.Name = "label2";
+            label2.Padding = new Padding(4);
+            label2.Size = new System.Drawing.Size(65, 27);
+            label2.TabIndex = 1;
+            label2.Text = "Акт №";
             // 
-            // dateTime_check
+            // checkDate
             // 
-            this.dateTime_check.CustomFormat = "« dd » MMMM yyyy г.";
-            this.dateTime_check.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime_check.Location = new System.Drawing.Point(125, 26);
-            this.dateTime_check.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTime_check.Name = "dateTime_check";
-            this.dateTime_check.Size = new System.Drawing.Size(181, 25);
-            this.dateTime_check.TabIndex = 3;
+            checkDate.CustomFormat = "« dd » MMMM yyyy г.";
+            checkDate.Format = DateTimePickerFormat.Custom;
+            checkDate.Location = new System.Drawing.Point(125, 26);
+            checkDate.Margin = new Padding(3, 2, 3, 2);
+            checkDate.Name = "checkDate";
+            checkDate.Size = new System.Drawing.Size(181, 25);
+            checkDate.TabIndex = 3;
             // 
-            // dateTime_act
+            // actDate
             // 
-            this.dateTime_act.CustomFormat = "« dd » MMMM yyyy г.";
-            this.dateTime_act.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime_act.Location = new System.Drawing.Point(125, 53);
-            this.dateTime_act.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTime_act.Name = "dateTime_act";
-            this.dateTime_act.Size = new System.Drawing.Size(181, 25);
-            this.dateTime_act.TabIndex = 5;
+            actDate.CustomFormat = "« dd » MMMM yyyy г.";
+            actDate.Format = DateTimePickerFormat.Custom;
+            actDate.Location = new System.Drawing.Point(125, 53);
+            actDate.Margin = new Padding(3, 2, 3, 2);
+            actDate.Name = "actDate";
+            actDate.Size = new System.Drawing.Size(181, 25);
+            actDate.TabIndex = 5;
             // 
-            // tbox_check
+            // checkNumberTextBox
             // 
-            this.tbox_check.Location = new System.Drawing.Point(85, 26);
-            this.tbox_check.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_check.MaxLength = 3;
-            this.tbox_check.Name = "tbox_check";
-            this.tbox_check.Size = new System.Drawing.Size(36, 25);
-            this.tbox_check.TabIndex = 2;
-            this.tbox_check.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_check.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            checkNumberTextBox.Location = new System.Drawing.Point(85, 26);
+            checkNumberTextBox.Margin = new Padding(3, 2, 3, 2);
+            checkNumberTextBox.MaxLength = 3;
+            checkNumberTextBox.Name = "checkNumberTextBox";
+            checkNumberTextBox.Size = new System.Drawing.Size(36, 25);
+            checkNumberTextBox.TabIndex = 2;
+            checkNumberTextBox.TextAlign = HorizontalAlignment.Center;
+            checkNumberTextBox.KeyPress += IsDigit_KeyPress;
             // 
-            // tbox_act
+            // actNumberTextBox
             // 
-            this.tbox_act.Location = new System.Drawing.Point(85, 53);
-            this.tbox_act.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_act.MaxLength = 3;
-            this.tbox_act.Name = "tbox_act";
-            this.tbox_act.Size = new System.Drawing.Size(36, 25);
-            this.tbox_act.TabIndex = 4;
-            this.tbox_act.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_act.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            actNumberTextBox.Location = new System.Drawing.Point(85, 53);
+            actNumberTextBox.Margin = new Padding(3, 2, 3, 2);
+            actNumberTextBox.MaxLength = 3;
+            actNumberTextBox.Name = "actNumberTextBox";
+            actNumberTextBox.Size = new System.Drawing.Size(36, 25);
+            actNumberTextBox.TabIndex = 4;
+            actNumberTextBox.TextAlign = HorizontalAlignment.Center;
+            actNumberTextBox.KeyPress += IsDigit_KeyPress;
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.groupBox5);
-            this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(683, 542);
-            this.panel1.TabIndex = 1;
+            panel1.AutoScroll = true;
+            panel1.Controls.Add(submitButton);
+            panel1.Controls.Add(groupBox5);
+            panel1.Controls.Add(groupBox4);
+            panel1.Controls.Add(groupBox3);
+            panel1.Controls.Add(groupBox2);
+            panel1.Location = new System.Drawing.Point(12, 12);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(683, 542);
+            panel1.TabIndex = 1;
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(499, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(175, 45);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Создать документы";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            submitButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            submitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            submitButton.Location = new System.Drawing.Point(499, 485);
+            submitButton.Name = "submitButton";
+            submitButton.Size = new System.Drawing.Size(175, 45);
+            submitButton.TabIndex = 36;
+            submitButton.Text = "Создать документы";
+            submitButton.UseVisualStyleBackColor = false;
+            submitButton.Click += OnSubmitClick;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.price);
-            this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(2, 478);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(360, 57);
-            this.groupBox5.TabIndex = 35;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Итого";
+            groupBox5.Controls.Add(label5);
+            groupBox5.Controls.Add(cost);
+            groupBox5.Controls.Add(label9);
+            groupBox5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            groupBox5.ForeColor = System.Drawing.Color.White;
+            groupBox5.Location = new System.Drawing.Point(2, 478);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new System.Drawing.Size(360, 57);
+            groupBox5.TabIndex = 35;
+            groupBox5.TabStop = false;
+            groupBox5.Text = "Итого";
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(1, 21);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(4);
-            this.label5.Size = new System.Drawing.Size(169, 27);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "СУММА К ОПЛАТЕ";
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label5.Location = new System.Drawing.Point(1, 21);
+            label5.Name = "label5";
+            label5.Padding = new Padding(4);
+            label5.Size = new System.Drawing.Size(169, 27);
+            label5.TabIndex = 32;
+            label5.Text = "СУММА К ОПЛАТЕ";
             // 
-            // price
+            // cost
             // 
-            this.price.Location = new System.Drawing.Point(173, 23);
-            this.price.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(114, 25);
-            this.price.TabIndex = 23;
-            this.price.Text = "0,00";
-            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.price.TextChanged += new System.EventHandler(this.tbox_price_TextChanged);
+            cost.Location = new System.Drawing.Point(173, 23);
+            cost.Margin = new Padding(3, 2, 3, 2);
+            cost.Name = "cost";
+            cost.Size = new System.Drawing.Size(114, 25);
+            cost.TabIndex = 23;
+            cost.Text = "0,00";
+            cost.TextAlign = HorizontalAlignment.Center;
+            cost.TextChanged += tbox_price_TextChanged;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.No;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(290, 21);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(4);
-            this.label9.Size = new System.Drawing.Size(67, 27);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "рублей";
+            label9.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label9.AutoSize = true;
+            label9.Cursor = Cursors.No;
+            label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label9.Location = new System.Drawing.Point(290, 21);
+            label9.Name = "label9";
+            label9.Padding = new Padding(4);
+            label9.Size = new System.Drawing.Size(67, 27);
+            label9.TabIndex = 29;
+            label9.Text = "рублей";
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.tbox_from);
-            this.groupBox4.Controls.Add(this.tbox_where);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(424, 26);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(256, 88);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Маршрут";
+            groupBox4.Controls.Add(label7);
+            groupBox4.Controls.Add(label8);
+            groupBox4.Controls.Add(srcRouteTextBox);
+            groupBox4.Controls.Add(dstRouteTextBox);
+            groupBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            groupBox4.ForeColor = System.Drawing.Color.White;
+            groupBox4.Location = new System.Drawing.Point(424, 26);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new System.Drawing.Size(256, 88);
+            groupBox4.TabIndex = 7;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Маршрут";
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.tbox_BIC);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.tbox_correspondentAccount);
-            this.groupBox3.Controls.Add(this.tbox_TIN);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.tbox_currentAccount);
-            this.groupBox3.Controls.Add(this.groupBox1);
-            this.groupBox3.Controls.Add(this.lable11);
-            this.groupBox3.Controls.Add(this.bank);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.company);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.address);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(2, 133);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(641, 339);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Информация о плательщике";
+            groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            groupBox3.AutoSize = true;
+            groupBox3.Controls.Add(bicTextBox);
+            groupBox3.Controls.Add(label15);
+            groupBox3.Controls.Add(label13);
+            groupBox3.Controls.Add(correspondentAccountTextBox);
+            groupBox3.Controls.Add(innTextBox);
+            groupBox3.Controls.Add(label12);
+            groupBox3.Controls.Add(settlementAccountTextBox);
+            groupBox3.Controls.Add(groupBox1);
+            groupBox3.Controls.Add(lable11);
+            groupBox3.Controls.Add(bankTextBox);
+            groupBox3.Controls.Add(label3);
+            groupBox3.Controls.Add(label10);
+            groupBox3.Controls.Add(companyTextBox);
+            groupBox3.Controls.Add(label4);
+            groupBox3.Controls.Add(addressTextBox);
+            groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            groupBox3.ForeColor = System.Drawing.Color.White;
+            groupBox3.Location = new System.Drawing.Point(2, 133);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new System.Drawing.Size(641, 339);
+            groupBox3.TabIndex = 10;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Информация о плательщике";
             // 
             // label15
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label15.Location = new System.Drawing.Point(43, 86);
-            this.label15.Name = "label15";
-            this.label15.Padding = new System.Windows.Forms.Padding(4);
-            this.label15.Size = new System.Drawing.Size(53, 27);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "ИНН";
+            label15.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label15.AutoSize = true;
+            label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            label15.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label15.Location = new System.Drawing.Point(43, 86);
+            label15.Name = "label15";
+            label15.Padding = new Padding(4);
+            label15.Size = new System.Drawing.Size(53, 27);
+            label15.TabIndex = 30;
+            label15.Text = "ИНН";
             // 
-            // tbox_TIN
+            // innTextBox
             // 
-            this.tbox_TIN.HidePromptOnLeave = true;
-            this.tbox_TIN.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tbox_TIN.Location = new System.Drawing.Point(102, 88);
-            this.tbox_TIN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_TIN.Mask = "0 0 0 0 0 0 0 0 0 0 0 0";
-            this.tbox_TIN.Name = "tbox_TIN";
-            this.tbox_TIN.Size = new System.Drawing.Size(147, 25);
-            this.tbox_TIN.TabIndex = 13;
-            this.tbox_TIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_TIN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            innTextBox.HidePromptOnLeave = true;
+            innTextBox.InsertKeyMode = InsertKeyMode.Overwrite;
+            innTextBox.Location = new System.Drawing.Point(102, 88);
+            innTextBox.Margin = new Padding(3, 2, 3, 2);
+            innTextBox.Mask = "0 0 0 0 0 0 0 0 0 0 0 0";
+            innTextBox.Name = "innTextBox";
+            innTextBox.Size = new System.Drawing.Size(147, 25);
+            innTextBox.TabIndex = 13;
+            innTextBox.TextAlign = HorizontalAlignment.Center;
+            innTextBox.KeyPress += IsDigit_KeyPress;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbox_code);
-            this.groupBox1.Controls.Add(this.rb_KPP);
-            this.groupBox1.Controls.Add(this.rb_OGRNIP);
-            this.groupBox1.Controls.Add(this.rb_OGRN);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(14, 118);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 78);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Код";
+            groupBox1.Controls.Add(codeTextBox);
+            groupBox1.Controls.Add(kppRadioButton);
+            groupBox1.Controls.Add(ogrnipRadioButton);
+            groupBox1.Controls.Add(ogrnRadioButton);
+            groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            groupBox1.ForeColor = System.Drawing.Color.White;
+            groupBox1.Location = new System.Drawing.Point(14, 118);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new System.Drawing.Size(241, 78);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Код";
             // 
-            // tbox_code
+            // codeTextBox
             // 
-            this.tbox_code.HidePromptOnLeave = true;
-            this.tbox_code.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Overwrite;
-            this.tbox_code.Location = new System.Drawing.Point(6, 41);
-            this.tbox_code.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbox_code.Mask = "0 0 0 0 0 0 0 0 0 0 0 0 0";
-            this.tbox_code.Name = "tbox_code";
-            this.tbox_code.Size = new System.Drawing.Size(229, 25);
-            this.tbox_code.TabIndex = 18;
-            this.tbox_code.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IsDigit_KeyPress);
+            codeTextBox.HidePromptOnLeave = true;
+            codeTextBox.InsertKeyMode = InsertKeyMode.Overwrite;
+            codeTextBox.Location = new System.Drawing.Point(6, 41);
+            codeTextBox.Margin = new Padding(3, 2, 3, 2);
+            codeTextBox.Mask = "0 0 0 0 0 0 0 0 0 0 0 0 0";
+            codeTextBox.Name = "codeTextBox";
+            codeTextBox.Size = new System.Drawing.Size(229, 25);
+            codeTextBox.TabIndex = 18;
+            codeTextBox.TextAlign = HorizontalAlignment.Center;
+            codeTextBox.KeyPress += IsDigit_KeyPress;
             // 
-            // rb_KPP
+            // kppRadioButton
             // 
-            this.rb_KPP.AutoSize = true;
-            this.rb_KPP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_KPP.Location = new System.Drawing.Point(183, 15);
-            this.rb_KPP.Name = "rb_KPP";
-            this.rb_KPP.Size = new System.Drawing.Size(54, 21);
-            this.rb_KPP.TabIndex = 17;
-            this.rb_KPP.Text = "КПП";
-            this.rb_KPP.UseVisualStyleBackColor = true;
-            this.rb_KPP.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            kppRadioButton.AutoSize = true;
+            kppRadioButton.Cursor = Cursors.Hand;
+            kppRadioButton.Location = new System.Drawing.Point(183, 15);
+            kppRadioButton.Name = "kppRadioButton";
+            kppRadioButton.Size = new System.Drawing.Size(54, 21);
+            kppRadioButton.TabIndex = 17;
+            kppRadioButton.Text = "КПП";
+            kppRadioButton.UseVisualStyleBackColor = true;
+            kppRadioButton.CheckedChanged += radioButton3_CheckedChanged;
             // 
-            // rb_OGRNIP
+            // ogrnipRadioButton
             // 
-            this.rb_OGRNIP.AutoSize = true;
-            this.rb_OGRNIP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_OGRNIP.Location = new System.Drawing.Point(88, 15);
-            this.rb_OGRNIP.Name = "rb_OGRNIP";
-            this.rb_OGRNIP.Size = new System.Drawing.Size(81, 21);
-            this.rb_OGRNIP.TabIndex = 16;
-            this.rb_OGRNIP.Text = "ОГРНИП";
-            this.rb_OGRNIP.UseVisualStyleBackColor = true;
-            this.rb_OGRNIP.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            ogrnipRadioButton.AutoSize = true;
+            ogrnipRadioButton.Cursor = Cursors.Hand;
+            ogrnipRadioButton.Location = new System.Drawing.Point(88, 15);
+            ogrnipRadioButton.Name = "ogrnipRadioButton";
+            ogrnipRadioButton.Size = new System.Drawing.Size(81, 21);
+            ogrnipRadioButton.TabIndex = 16;
+            ogrnipRadioButton.Text = "ОГРНИП";
+            ogrnipRadioButton.UseVisualStyleBackColor = true;
+            ogrnipRadioButton.CheckedChanged += radioButton2_CheckedChanged;
             // 
-            // rb_OGRN
+            // ogrnRadioButton
             // 
-            this.rb_OGRN.AutoSize = true;
-            this.rb_OGRN.Checked = true;
-            this.rb_OGRN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_OGRN.Location = new System.Drawing.Point(11, 15);
-            this.rb_OGRN.Name = "rb_OGRN";
-            this.rb_OGRN.Size = new System.Drawing.Size(61, 21);
-            this.rb_OGRN.TabIndex = 15;
-            this.rb_OGRN.TabStop = true;
-            this.rb_OGRN.Text = "ОГРН";
-            this.rb_OGRN.UseVisualStyleBackColor = true;
-            this.rb_OGRN.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            ogrnRadioButton.AutoSize = true;
+            ogrnRadioButton.Checked = true;
+            ogrnRadioButton.Cursor = Cursors.Hand;
+            ogrnRadioButton.Location = new System.Drawing.Point(11, 15);
+            ogrnRadioButton.Name = "ogrnRadioButton";
+            ogrnRadioButton.Size = new System.Drawing.Size(61, 21);
+            ogrnRadioButton.TabIndex = 15;
+            ogrnRadioButton.TabStop = true;
+            ogrnRadioButton.Text = "ОГРН";
+            ogrnRadioButton.UseVisualStyleBackColor = true;
+            ogrnRadioButton.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTime_Contract);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dateTime_act);
-            this.groupBox2.Controls.Add(this.tbox_act);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.tbox_check);
-            this.groupBox2.Controls.Add(this.contractNumber);
-            this.groupBox2.Controls.Add(this.dateTime_check);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(2, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 120);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Документы";
+            groupBox2.Controls.Add(payerContractDate);
+            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(actDate);
+            groupBox2.Controls.Add(actNumberTextBox);
+            groupBox2.Controls.Add(label2);
+            groupBox2.Controls.Add(checkNumberTextBox);
+            groupBox2.Controls.Add(payerContractNumberTextBox);
+            groupBox2.Controls.Add(checkDate);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            groupBox2.ForeColor = System.Drawing.Color.White;
+            groupBox2.Location = new System.Drawing.Point(2, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new System.Drawing.Size(415, 120);
+            groupBox2.TabIndex = 1;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Документы";
             // 
-            // dateTime_Contract
+            // payerContractDate
             // 
-            this.dateTime_Contract.CustomFormat = "dd MMMM yyyy г.";
-            this.dateTime_Contract.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTime_Contract.Location = new System.Drawing.Point(252, 84);
-            this.dateTime_Contract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTime_Contract.Name = "dateTime_Contract";
-            this.dateTime_Contract.Size = new System.Drawing.Size(157, 25);
-            this.dateTime_Contract.TabIndex = 7;
+            payerContractDate.CustomFormat = "dd MMMM yyyy г.";
+            payerContractDate.Format = DateTimePickerFormat.Custom;
+            payerContractDate.Location = new System.Drawing.Point(252, 84);
+            payerContractDate.Margin = new Padding(3, 2, 3, 2);
+            payerContractDate.Name = "payerContractDate";
+            payerContractDate.Size = new System.Drawing.Size(157, 25);
+            payerContractDate.TabIndex = 7;
             // 
             // errorProvider1
             // 
-            this.errorProvider1.BlinkRate = 500;
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.AlwaysBlink;
-            this.errorProvider1.ContainerControl = this;
+            errorProvider1.BlinkRate = 500;
+            errorProvider1.BlinkStyle = ErrorBlinkStyle.AlwaysBlink;
+            errorProvider1.ContainerControl = this;
             // 
-            // Form1
+            // CheckAct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(707, 562);
-            this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Создание документов Счёт и Акт";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BackColor = System.Drawing.SystemColors.WindowFrame;
+            ClientSize = new System.Drawing.Size(707, 562);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
+            Name = "CheckAct";
+            Text = "Создание документов Счёт и Акт";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -651,36 +650,36 @@ namespace CheckAct.Application
         private Label lable11;
         private Label label12;
         private Label label13;
-        private MaskedTextBox tbox_BIC;
-        private MaskedTextBox tbox_correspondentAccount;
-        private MaskedTextBox tbox_currentAccount;
-        private TextBox bank;
-        private TextBox contractNumber;
-        private TextBox address;
-        private TextBox company;
-        private TextBox tbox_act;
-        private TextBox tbox_check;
-        private TextBox tbox_where;
-        private TextBox tbox_from;
-        private DateTimePicker dateTime_act;
-        private DateTimePicker dateTime_check;
+        private MaskedTextBox bicTextBox;
+        private MaskedTextBox correspondentAccountTextBox;
+        private MaskedTextBox settlementAccountTextBox;
+        private TextBox bankTextBox;
+        private TextBox payerContractNumberTextBox;
+        private TextBox addressTextBox;
+        private TextBox companyTextBox;
+        private TextBox actNumberTextBox;
+        private TextBox checkNumberTextBox;
+        private TextBox dstRouteTextBox;
+        private TextBox srcRouteTextBox;
+        private DateTimePicker actDate;
+        private DateTimePicker checkDate;
         private Panel panel1;
         private GroupBox groupBox1;
-        private RadioButton rb_KPP;
-        private RadioButton rb_OGRNIP;
-        private RadioButton rb_OGRN;
+        private RadioButton kppRadioButton;
+        private RadioButton ogrnipRadioButton;
+        private RadioButton ogrnRadioButton;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private Label label15;
-        private MaskedTextBox tbox_TIN;
-        private MaskedTextBox tbox_code;
+        private MaskedTextBox innTextBox;
+        private MaskedTextBox codeTextBox;
         private GroupBox groupBox4;
-        private TextBox price;
+        private TextBox cost;
         private Label label5;
         private Label label9;
-        private Button button1;
+        private Button submitButton;
         private GroupBox groupBox5;
         private ErrorProvider errorProvider1;
-        private DateTimePicker dateTime_Contract;
+        private DateTimePicker payerContractDate;
     }
 }

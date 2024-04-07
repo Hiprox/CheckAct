@@ -1,4 +1,5 @@
-﻿using LinqToDB.Mapping;
+﻿using CheckAct.Domain.Enums;
+using LinqToDB.Mapping;
 
 namespace CheckAct.Domain.Payers;
 
@@ -37,7 +38,7 @@ public class Payer : IAggregateRoot
     /// <summary>
     /// Тип кода.
     /// </summary>
-    [Column, NotNull] public string CodeType { get; set; }
+    [Column, NotNull] public CodeType CodeType { get; set; }
 
     /// <summary>
     /// Код.

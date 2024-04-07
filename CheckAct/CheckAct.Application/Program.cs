@@ -5,6 +5,8 @@ using Application.Infrastructure.Persistence.Migrations;
 using CheckAct.Application.Utility;
 using CheckAct.Infrastructure;
 using LinqToDB;
+using LinqToDB.Data;
+using Microsoft.Extensions.Logging;
 using Serilog;
 
 namespace CheckAct.Application
@@ -30,6 +32,8 @@ namespace CheckAct.Application
                 CheckActContext.SetOptions(new DataOptions()
                     .UsePostgreSQL(DIContainer.Config.SqlConnectionString));
 
+                DataConnection.TurnTraceSwitchOn();
+                DataConnection.WriteTraceLine = (s1, s2, _) => Log.Information("{0} {1}", s1, s2);
                 ApplicationConfiguration.Initialize();
                 System.Windows.Forms.Application.Run(new CheckAct());
             }

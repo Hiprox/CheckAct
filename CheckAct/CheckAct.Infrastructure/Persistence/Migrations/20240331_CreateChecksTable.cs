@@ -17,7 +17,7 @@ public class CreateCheckTable : AutoReversingMigration
     {
         Create.Table(Check.TableName).InSchema("public")
             .WithColumn(nameof(Check.Id)).AsInt32().PrimaryKey().Identity()
-            .WithColumn(nameof(Check.Number)).AsInt32().NotNullable()
+            .WithColumn(nameof(Check.Number)).AsString(32).NotNullable()
             .WithColumnDescription("Номер счета")
             .WithColumn(nameof(Check.Date)).AsDate().NotNullable()
             .WithColumnDescription("Дата выставления счета")

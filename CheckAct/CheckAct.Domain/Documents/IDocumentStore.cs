@@ -2,4 +2,5 @@
 
 public interface IDocumentStore : IStore<Document>
 {
+    
 }

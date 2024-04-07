@@ -1,34 +1,64 @@
 ﻿using CheckAct.Domain.Documents;
+using LinqToDB;
+using LinqToDB.Data;
 
 namespace CheckAct.Infrastructure.Stores;
 
+#nullable enable
+
 public class DocumentStore() : IDocumentStore
 {
-    public Task<Document> Add(Document entity)
+    public async Task<Document> Add(Document entity)
     {
-        using var db = new CheckActContext();
+        await using var db = new CheckActContext();
+        await using var transaction = await db.BeginTransactionAsync();
+        try
+        {
+            entity.RoadRouteId = await db.InsertWithInt32IdentityAsync(entity.RoadRoute);
+            
+            entity.PayerId = await db.InsertWithInt32IdentityAsync(entity.Payer);
 
-        throw new NotImplementedException();
+            var docId = await db.InsertWithInt32IdentityAsync(entity);
+
+            foreach (var check in entity.Checks)
+            {
+                check.DocumentId = docId;
+            }
+
+            await db.BulkCopyAsync(entity.Checks);
+
+            entity.Act.DocumentId = docId;
+            await db.InsertAsync(entity.Act);
+
+            await transaction.CommitAsync();
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            throw;
+        }
+
+        return entity;
     }
 
-    public Task<List<Document>> FindAll()
+    public async Task<List<Document>> FindAll()
     {
-        using var db = new CheckActContext();
+        await using var db = new CheckActContext();
 
-        throw new NotImplementedException();
+        return await db.Documents.ToListAsync();
     }
 
-    public Task<Document> FindById(int id)
+    public async Task<Document?> FindById(int id)
     {
-        using var db = new CheckActContext();
+        await using var db = new CheckActContext();
 
-        throw new NotImplementedException();
+        return await db.Documents.Where((_, i) => i == id).FirstOrDefaultAsync();
     }
 
-    public Task Remove(int id)
+    public async Task Remove(int id)
     {
-        using var db = new CheckActContext();
+        await using var db = new CheckActContext();
 
-        throw new NotImplementedException();
+        await db.Documents.Where(x => x.Id == id).DeleteAsync();
     }
 }

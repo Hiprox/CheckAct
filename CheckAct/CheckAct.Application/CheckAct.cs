@@ -4,28 +4,38 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using CheckAct.Application.Utility;
+using CheckAct.BusinessLogic.Dto;
+using CheckAct.BusinessLogic.Interfaces;
+using CheckAct.Domain.Enums;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 using TemplateEngine.Docx;
 
 namespace CheckAct.Application
 {
     public partial class CheckAct : Form
     {
+        private readonly IDocumentService _documentService = DIContainer.ServiceProvider.GetService<IDocumentService>();
+
         public CheckAct()
         {
             InitializeComponent();
             DirectoriesExists();
 
-            company.TextChanged += TextBox_TextChanged;
-            address.TextChanged += TextBox_TextChanged;
-            bank.TextChanged += TextBox_TextChanged;
-            contractNumber.TextChanged += TextBox_TextChanged;
-            contractNumber.Leave += ContractNumber_Leave;
+            companyTextBox.TextChanged += TextBox_TextChanged;
+            addressTextBox.TextChanged += TextBox_TextChanged;
+            bankTextBox.TextChanged += TextBox_TextChanged;
+            payerContractNumberTextBox.TextChanged += TextBox_TextChanged;
+            payerContractNumberTextBox.Leave += ContractNumber_Leave;
         }
+
         private void DirectoriesExists()
         {
             if (!Directory.Exists(DIR_TEMPLATE)) Directory.CreateDirectory(DIR_TEMPLATE);
             if (!Directory.Exists(DIR_RESULT)) Directory.CreateDirectory(DIR_RESULT);
         }
+
         /// <summary>
         /// Изменить кавычки на угловые в TextBox
         /// </summary>
@@ -40,12 +50,14 @@ namespace CheckAct.Application
                 tb.Select(cursor, 0);
             }
         }
+
         private static void IsDigitalInput(ref KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) return;
-            else if (Char.IsControl(e.KeyChar)) return;
-            else e.Handled = true;
+            if (Char.IsControl(e.KeyChar)) return;
+            e.Handled = true;
         }
+
         /// <summary>
         /// Получить дату разбитую на 3 части - день, месяц, год
         /// </summary>
@@ -54,13 +66,14 @@ namespace CheckAct.Application
         private Tuple<string, string, string> GetSplitDate(DateTimePicker date)
         {
             var result = date.Text.Split(' ', StringSplitOptions.TrimEntries);
-            return new (result.First(), result[0], result.Last());
+            return new(result.First(), result[0], result.Last());
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private async void OnSubmitClick(object sender, EventArgs e)
         {
             DirectoriesExists();
 
-            var FileResultAct = string.Format("{0}\\{1}",DIR_RESULT, RESULT_ACT);
+            var FileResultAct = string.Format("{0}\\{1}", DIR_RESULT, RESULT_ACT);
             var FileResultCheck = string.Format("{0}\\{1}", DIR_RESULT, RESULT_CHECK);
             var FileTemplatetAct = string.Format("{0}\\{1}", DIR_TEMPLATE, TEMPLATE_ACT);
             var FileTemplateCheck = string.Format("{0}\\{1}", DIR_TEMPLATE, TEMPLATE_CHECK);
@@ -73,14 +86,16 @@ namespace CheckAct.Application
                 MessageBox.Show("Код ошибки 0х01");
                 return;
             }
-            
+
             File.Copy(FileTemplatetAct, FileResultAct);
             File.Copy(FileTemplateCheck, FileResultCheck);
 
-            var codeType = rb_OGRN.Checked ? rb_OGRN.Text : (rb_OGRNIP.Checked ? rb_OGRNIP.Text : rb_KPP.Text);
+            var codeType = ogrnRadioButton.Checked
+                ? ogrnRadioButton.Text
+                : (ogrnipRadioButton.Checked ? ogrnipRadioButton.Text : kppRadioButton.Text);
 
             // Sum
-            var number = price.Text.Split(',');
+            var number = cost.Text.Split(',');
             var integer = int.Parse(number[0]);
             var fraction = int.Parse(number[1]);
 
@@ -89,52 +104,101 @@ namespace CheckAct.Application
             var priceCheck = string.Format("{0}-{1}",
                 integer.ToString("#,0", new CultureInfo("ru-RU")),
                 fraction.ToString("00", new CultureInfo("ru-RU"))
-                );
-            
+            );
+
             var priceWords = string.Format("{0}{1}",
                 RusNumber.Str(integer, currency: RusNumber.Currency.Ruble),
-                fraction > 0 ?
-                    string.Format(" {0}", RusNumber.Str(fraction, isUpper: false, currency: RusNumber.Currency.Penny))
+                fraction > 0
+                    ? string.Format(" {0}", RusNumber.Str(fraction, isUpper: false, currency: RusNumber.Currency.Penny))
                     : string.Empty
-                );
+            );
 
             // Привязка значений к ключам шаблона DOCX документа
             var valuesActToFill = new Content(
-                new FieldContent("Company", company.Text),
-                new FieldContent("Address", address.Text),
-                new FieldContent("TIN", tbox_TIN.Text.Replace(" ", "")),
+                new FieldContent("Company", companyTextBox.Text),
+                new FieldContent("Address", addressTextBox.Text),
+                new FieldContent("TIN", innTextBox.Text.Replace(" ", "")),
                 new FieldContent("CodeType", codeType),
-                new FieldContent("Code", tbox_code.Text.Replace(" ", "")),
-                new FieldContent("ActNumber", tbox_act.Text),
-                new FieldContent("ActDate", dateTime_act.Text),
-                new FieldContent("ContractNumber", contractNumber.Text),
-                new FieldContent("ContractDate", dateTime_Contract.Text),
-                new FieldContent("From", tbox_from.Text),
-                new FieldContent("Where", tbox_where.Text),
+                new FieldContent("Code", codeTextBox.Text.Replace(" ", "")),
+                new FieldContent("ActNumber", actNumberTextBox.Text),
+                new FieldContent("ActDate", actDate.Text),
+                new FieldContent("ContractNumber", payerContractNumberTextBox.Text),
+                new FieldContent("ContractDate", payerContractDate.Text),
+                new FieldContent("From", srcRouteTextBox.Text),
+                new FieldContent("Where", dstRouteTextBox.Text),
                 new FieldContent("Price", priceAct),
                 new FieldContent("PriceWords", priceWords)
-                );
+            );
             var valuesCheckToFill = new Content(
-                new FieldContent("Company", company.Text),
-                new FieldContent("Address", address.Text),
-                new FieldContent("TIN", tbox_TIN.Text.Replace(" ", "")),
+                new FieldContent("Company", companyTextBox.Text),
+                new FieldContent("Address", addressTextBox.Text),
+                new FieldContent("TIN", innTextBox.Text.Replace(" ", "")),
                 new FieldContent("CodeType", codeType),
-                new FieldContent("Code", tbox_code.Text.Replace(" ", "")),
-                new FieldContent("CurrentAccount", tbox_currentAccount.Text.Replace(" ", "")),
-                new FieldContent("CorrespondentAccount", tbox_correspondentAccount.Text.Replace(" ", "")),
-                new FieldContent("Bank", bank.Text),
-                new FieldContent("BIC", tbox_BIC.Text.Replace(" ", "")),
-                new FieldContent("CheckNumber", tbox_check.Text),
-                new FieldContent("CheckDate", dateTime_check.Text),
-                new FieldContent("ContractNumber", contractNumber.Text),
-                new FieldContent("ContractDate", dateTime_Contract.Text),
-                new FieldContent("From", tbox_from.Text),
-                new FieldContent("Where", tbox_where.Text),
+                new FieldContent("Code", codeTextBox.Text.Replace(" ", "")),
+                new FieldContent("CurrentAccount", settlementAccountTextBox.Text.Replace(" ", "")),
+                new FieldContent("CorrespondentAccount", correspondentAccountTextBox.Text.Replace(" ", "")),
+                new FieldContent("Bank", bankTextBox.Text),
+                new FieldContent("BIC", bicTextBox.Text.Replace(" ", "")),
+                new FieldContent("CheckNumber", checkNumberTextBox.Text),
+                new FieldContent("CheckDate", checkDate.Text),
+                new FieldContent("ContractNumber", payerContractNumberTextBox.Text),
+                new FieldContent("ContractDate", payerContractDate.Text),
+                new FieldContent("From", srcRouteTextBox.Text),
+                new FieldContent("Where", dstRouteTextBox.Text),
                 new FieldContent("Price", priceCheck),
                 new FieldContent("PriceWords", priceWords)
-                );
+            );
 
-            // Обработка
+            // Обработка\
+            try
+            {
+                var dto = new DocumentDto
+                {
+                    Act = new ActDto
+                    {
+                        Number = actNumberTextBox.Text,
+                        Date = actDate.Value
+                    },
+                    Checks =
+                    [
+                        new CheckDto
+                        {
+                            Number = checkNumberTextBox.Text,
+                            Date = checkDate.Value,
+                            Cost = long.Parse($"{integer}{fraction}")
+                        }
+                    ],
+                    PayerContractNumber = payerContractNumberTextBox.Text,
+                    PayerContractDate = payerContractDate.Value,
+                    RoadRoute = new RoadRouteDto
+                    {
+                        SourceRoute = srcRouteTextBox.Text,
+                        SourceDate = DateTime.Today,
+                        DestinationRoute = dstRouteTextBox.Text,
+                        DestinationDate = DateTime.Today
+                    },
+                    Payer = new PayerDto
+                    {
+                        Company = companyTextBox.Text,
+                        Address = addressTextBox.Text,
+                        Inn = innTextBox.Text.Replace(" ", ""),
+                        CodeType = SelectedCodeType,
+                        Code = codeTextBox.Text.Replace(" ", ""),
+                        Bank = bankTextBox.Text,
+                        SettlementAccount = settlementAccountTextBox.Text.Replace(" ", ""),
+                        CorrespondentAccount = correspondentAccountTextBox.Text.Replace(" ", ""),
+                        Bic = bicTextBox.Text.Replace(" ", "")
+                    }
+                };
+
+                await _documentService.CreateAsync(dto);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Ошибка при построении отчёта");
+                MessageBox.Show("Ошибка при построении отчёта.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             try
             {
                 DirectoriesExists();
@@ -155,23 +219,43 @@ namespace CheckAct.Application
             {
                 MessageBox.Show("Код ошибки 0х02");
             }
+
             MessageBox.Show(string.Format("Документы созданы!"));
         }
+
+        private CodeType SelectedCodeType
+        {
+            get
+            {
+                if (ogrnRadioButton.Checked)
+                {
+                    return CodeType.Ogrn;
+                }
+
+                if (ogrnipRadioButton.Checked)
+                {
+                    return CodeType.Ogrnip;
+                }
+
+                return CodeType.Kpp;
+            }
+        }
+
         private void IsDigit_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsDigitalInput(ref e);
         }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            this.tbox_code.Mask = "0 0 0 0 0 0 0 0 0 0 0 0 0";
+            this.codeTextBox.Mask = "0000000000000";
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            this.tbox_code.Mask = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0";
+            this.codeTextBox.Mask = "000000000000000";
         }
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            this.tbox_code.Mask = "0 0 0 0 0 0 0 0 0";
+            this.codeTextBox.Mask = "000000000";
         }
         private void tbox_price_TextChanged(object sender, EventArgs e)
         {

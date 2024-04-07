@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Boxed.Mapping" Version="7.0.0" />
     <PackageReference Include="FastEnum" Version="1.8.0" />
     <PackageReference Include="FluentMigrator" Version="5.2.0" />
     <PackageReference Include="FluentMigrator.Runner.Core" Version="5.2.0" />
