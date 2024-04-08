@@ -2,6 +2,7 @@
 using CheckAct.Domain.Acts;
 using CheckAct.Domain.Checks;
 using CheckAct.Domain.Payers;
+using CheckAct.Domain.RoadRoutes;
 
 namespace CheckAct.Domain.Documents;
 
@@ -47,16 +48,10 @@ public class Document : IAggregateRoot
     public DateTime PayerContractDate { get; set; }
 
     /// <summary>
-    /// Идентификатор маршрута.
-    /// </summary>
-    [Column, NotNull]
-    public int RoadRouteId { get; set; }
-
-    /// <summary>
     /// Маршрут.
     /// </summary>
-    [Association(ThisKey = nameof(RoadRouteId), OtherKey = nameof(RoadRoute.Id))]
-    public RoadRoutes.RoadRoute RoadRoute { get; set; }
+    [Association(ThisKey = nameof(Id), OtherKey = nameof(RoadRoute.Id))]
+    public IEnumerable<RoadRoute> RoadRoutes { get; set; }
 
     /// <summary>
     /// Идентификатор плательщика.

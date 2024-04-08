@@ -16,13 +16,17 @@ public class DocumentImmutableMapper : IImmutableMapper<DocumentDto, Document>
         {
             PayerContractNumber = source.PayerContractNumber,
             PayerContractDate = source.PayerContractDate,
-            RoadRoute = new RoadRoute
-            {
-                Source = source.RoadRoute.SourceRoute,
-                SourceDate = source.RoadRoute.SourceDate,
-                Destination = source.RoadRoute.DestinationRoute,
-                DestinationDate = source.RoadRoute.DestinationDate
-            },
+            RoadRoutes =
+            [
+                .. source.RoadRoutes.Select((x, i) => new RoadRoute
+                {
+                    Order = i + 1,
+                    Source = x.SourceRoute,
+                    SourceDate = x.SourceDate,
+                    Destination = x.DestinationRoute,
+                    DestinationDate = x.DestinationDate,
+                }).OrderBy(x => x.Order)
+            ],
             Payer = new Payer
             {
                 Company = source.Payer.Company,

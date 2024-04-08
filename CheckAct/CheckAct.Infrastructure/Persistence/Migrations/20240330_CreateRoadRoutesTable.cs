@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Persistence.Migrations;
 /// <summary>
 /// Миграция для создания таблицы маршрутов.
 /// </summary>
-[Migration(20230330031600, "Создание таблицы маршрутов")]
+[Migration(20230330033900, "Создание таблицы маршрутов")]
 public class CreateRoadRoutesTable : AutoReversingMigration
 {
     /// <summary>
@@ -16,6 +16,8 @@ public class CreateRoadRoutesTable : AutoReversingMigration
     {
         Create.Table(RoadRoute.TableName).InSchema("public")
             .WithColumn(nameof(RoadRoute.Id)).AsInt32().PrimaryKey().Identity()
+            .WithColumn(nameof(RoadRoute.Order)).AsInt32().NotNullable()
+            .WithColumnDescription("Порядковый номер")
             .WithColumn(nameof(RoadRoute.Source)).AsString(512).NotNullable()
             .WithColumnDescription("Адрес погрузки")
             .WithColumn(nameof(RoadRoute.SourceDate)).AsDate().NotNullable()

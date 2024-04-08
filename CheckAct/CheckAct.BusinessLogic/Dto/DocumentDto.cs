@@ -8,7 +8,7 @@ public record DocumentDto
 
     public DateTime PayerContractDate { get; init; }
 
-    public RoadRouteDto RoadRoute { get; init; }
+    public List<RoadRouteDto> RoadRoutes { get; init; }
 
     public ActDto Act { get; init; }
 

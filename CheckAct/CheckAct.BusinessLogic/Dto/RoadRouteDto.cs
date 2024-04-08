@@ -1,4 +1,6 @@
-﻿namespace CheckAct.BusinessLogic.Dto;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+
+namespace CheckAct.BusinessLogic.Dto;
 
 #nullable disable
 

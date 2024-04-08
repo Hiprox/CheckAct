@@ -170,13 +170,16 @@ namespace CheckAct.Application
                     ],
                     PayerContractNumber = payerContractNumberTextBox.Text,
                     PayerContractDate = payerContractDate.Value,
-                    RoadRoute = new RoadRouteDto
-                    {
-                        SourceRoute = srcRouteTextBox.Text,
-                        SourceDate = DateTime.Today,
-                        DestinationRoute = dstRouteTextBox.Text,
-                        DestinationDate = DateTime.Today
-                    },
+                    RoadRoutes =
+                    [
+                        new RoadRouteDto
+                        {
+                            SourceRoute = srcRouteTextBox.Text,
+                            SourceDate = DateTime.Today,
+                            DestinationRoute = dstRouteTextBox.Text,
+                            DestinationDate = DateTime.Today
+                        }
+                    ],
                     Payer = new PayerDto
                     {
                         Company = companyTextBox.Text,
@@ -245,18 +248,22 @@ namespace CheckAct.Application
         {
             IsDigitalInput(ref e);
         }
+
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             this.codeTextBox.Mask = "0000000000000";
         }
+
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             this.codeTextBox.Mask = "000000000000000";
         }
+
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             this.codeTextBox.Mask = "000000000";
         }
+
         private void tbox_price_TextChanged(object sender, EventArgs e)
         {
             var tb = sender as TextBox;
@@ -272,6 +279,7 @@ namespace CheckAct.Application
                     {
                         value = value.TrimStart('0');
                     }
+
                     if (value.Length == 0)
                     {
                         if (tb != null)
@@ -287,12 +295,14 @@ namespace CheckAct.Application
                                 tb.Text = string.Format("{0:0.00}", ul);
                         }
                     }
+
                     if (tb != null)
                         tb.Select(tb.Text.Length, 0);
                 }
                 else tb.Text = tb.Text.Remove(tb.Text.Length - 1);
             }
         }
+
         private void ContractNumber_Leave(object sender, EventArgs e)
         {
             var tb = sender as TextBox;
@@ -302,12 +312,14 @@ namespace CheckAct.Application
                 tb.Select(tb.Text.Length, 0);
             }
         }
+
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             var obj = sender as TextBox;
             if (obj == null) return;
             DoubleAngleQuotationMark(obj);
         }
+
         private string DIR_TEMPLATE { get; } = "Template";
         private string DIR_RESULT { get; } = "Result";
         private string TEMPLATE_ACT { get; } = "template_act.docx";

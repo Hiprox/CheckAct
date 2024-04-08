@@ -1,4 +1,6 @@
 ﻿using CheckAct.Domain.Documents;
+using CheckAct.Domain.RoadRoutes;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
 using LinqToDB;
 using LinqToDB.Data;
 
@@ -12,13 +14,21 @@ public class DocumentStore() : IDocumentStore
     {
         await using var db = new CheckActContext();
         await using var transaction = await db.BeginTransactionAsync();
+
+        int docId = default;
+
         try
         {
-            entity.RoadRouteId = await db.InsertWithInt32IdentityAsync(entity.RoadRoute);
-            
             entity.PayerId = await db.InsertWithInt32IdentityAsync(entity.Payer);
 
-            var docId = await db.InsertWithInt32IdentityAsync(entity);
+            docId = await db.InsertWithInt32IdentityAsync(entity);
+
+            foreach (var route in entity.RoadRoutes)
+            {
+                route.DocumentId = docId;
+            }
+
+            await db.BulkCopyAsync(entity.RoadRoutes);
 
             foreach (var check in entity.Checks)
             {
@@ -38,7 +48,7 @@ public class DocumentStore() : IDocumentStore
             throw;
         }
 
-        return entity;
+        return await db.Documents.Where(x => x.Id == docId).FirstAsync();
     }
 
     public async Task<List<Document>> FindAll()

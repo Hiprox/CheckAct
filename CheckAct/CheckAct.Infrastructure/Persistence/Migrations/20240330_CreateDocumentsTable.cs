@@ -8,7 +8,7 @@ namespace Application.Infrastructure.Persistence.Migrations;
 /// <summary>
 /// Миграция для создания таблицы документов.
 /// </summary>
-[Migration(20230330033900, "Cоздание таблицы документов")]
+[Migration(20230330031600, "Cоздание таблицы документов")]
 public class CreateDocumentsTable : AutoReversingMigration
 {
     /// <summary>
@@ -22,9 +22,6 @@ public class CreateDocumentsTable : AutoReversingMigration
             .WithColumnDescription("Номер договора-заявки плательщика")
             .WithColumn(nameof(Document.PayerContractDate)).AsDate().NotNullable()
             .WithColumnDescription("Дата договора-заявки плательщика")
-            .WithColumn(nameof(Document.RoadRouteId)).AsInt32()
-            .ForeignKey(RoadRoute.TableName, nameof(RoadRoute.Id)).NotNullable()
-            .WithColumnDescription($"FK на {RoadRoute.TableName}.{nameof(RoadRoute.Id)}")
             .WithColumn(nameof(Document.PayerId)).AsInt32().ForeignKey(Payer.TableName, nameof(Payer.Id))
             .NotNullable()
             .WithColumnDescription($"FK на {Payer.TableName}.{nameof(Payer.Id)}");
