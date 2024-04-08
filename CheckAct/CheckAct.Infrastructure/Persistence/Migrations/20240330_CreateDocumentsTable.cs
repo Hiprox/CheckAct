@@ -8,7 +8,7 @@ namespace Application.Infrastructure.Persistence.Migrations;
 /// <summary>
 /// Миграция для создания таблицы документов.
 /// </summary>
-[Migration(20230330031600, "Cоздание таблицы документов")]
+[Migration(20230330032300, "Cоздание таблицы документов")]
 public class CreateDocumentsTable : AutoReversingMigration
 {
     /// <summary>

@@ -48,7 +48,7 @@ public class Document : IAggregateRoot
     public DateTime PayerContractDate { get; set; }
 
     /// <summary>
-    /// Маршрут.
+    /// Маршруты.
     /// </summary>
     [Association(ThisKey = nameof(Id), OtherKey = nameof(RoadRoute.Id))]
     public IEnumerable<RoadRoute> RoadRoutes { get; set; }

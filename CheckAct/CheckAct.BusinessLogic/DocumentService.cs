@@ -14,6 +14,7 @@ public class DocumentService(IDocumentStore documentStore, IImmutableMapper<Docu
 
         var document = mapper.Map(dto);
 
-        await documentStore.Add(document);
+        document = await documentStore.Add(document);
+        document = null;
     }
 }

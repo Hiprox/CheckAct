@@ -23,6 +23,7 @@ public class RoadRoute : IAggregateRoot
     /// <summary>
     /// Порядковый номер.
     /// </summary>
+    [Column, NotNull]
     public int Order { get; set; }
 
     /// <summary>

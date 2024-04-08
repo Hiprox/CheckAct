@@ -28,7 +28,7 @@ public class DocumentStore() : IDocumentStore
                 route.DocumentId = docId;
             }
 
-            await db.BulkCopyAsync(entity.RoadRoutes);
+            await db.BulkCopyAsync(entity.RoadRoutes.ToArray());
 
             foreach (var check in entity.Checks)
             {

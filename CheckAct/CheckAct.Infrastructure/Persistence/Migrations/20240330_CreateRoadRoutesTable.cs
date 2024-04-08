@@ -1,5 +1,7 @@
-﻿using CheckAct.Domain.RoadRoutes;
+﻿using CheckAct.Domain.Documents;
+using CheckAct.Domain.RoadRoutes;
 using FluentMigrator;
+using FluentMigrator.Builders;
 
 namespace Application.Infrastructure.Persistence.Migrations;
 
@@ -25,6 +27,9 @@ public class CreateRoadRoutesTable : AutoReversingMigration
             .WithColumn(nameof(RoadRoute.Destination)).AsString(512).NotNullable()
             .WithColumnDescription("Адрес разгрузки")
             .WithColumn(nameof(RoadRoute.DestinationDate)).AsDate().NotNullable()
-            .WithColumnDescription("Дата разгрузки");
+            .WithColumnDescription("Дата разгрузки")
+            .WithColumn(nameof(RoadRoute.DocumentId)).AsInt32().NotNullable()
+            .ForeignKey(Document.TableName, nameof(Document.Id))
+            .WithColumnDescription("Идентификатор документа");
     }
 }
